@@ -1,0 +1,76 @@
+#version 420 core
+out float FragColor;
+
+uniform sampler2D gPositionDepth;
+uniform sampler2D gNormal;
+uniform sampler2D texNoise;
+
+uniform vec3 uSampleKernel[128];
+uniform vec2 gScreenSize;
+
+uniform int kernelSize;  // change this to lower abit for better performance
+uniform float radius = 1.0;
+uniform float strength = 2.0;
+
+layout (std140, binding = 0) uniform Matrices
+{
+    mat4 projection;
+    mat4 view;
+};
+
+noperspective in vec2 vTexcoord;
+
+
+void main()
+{
+	vec2 TexCoords = vTexcoord;
+
+	 // Get input for SSAO algorithm
+    vec3 fragPos = texture(gPositionDepth, TexCoords).xyz;
+    vec3 normal = texture(gNormal, TexCoords).rgb;
+    vec3 randomVec = texture(texNoise, TexCoords * gScreenSize).xyz;
+
+    // Create TBN change-of-basis matrix: from tangent-space to view-space
+    vec3 tangent = normalize(randomVec - normal * dot(randomVec, normal));
+    vec3 bitangent = cross(normal, tangent);
+    mat3 TBN = mat3(tangent, bitangent, normal);
+
+    // Iterate over the sampled kernel and calculate occlusion factor
+    float occlusion = 0.0;
+
+    for(int i = 0; i < kernelSize; ++i)
+    {
+        // get sampled position
+        vec3 sampled = TBN * uSampleKernel[i]; // From tangent to view-space
+		float dotp = dot(sampled, normal);
+        sampled = fragPos + sampled * radius;
+		 
+        if(dotp < 0.125)
+		{
+			sampled += normal * 0.1;
+		}
+
+		// project sampled position (to sampled texture) (to get position on screen/texture)
+		vec4 offset = vec4(sampled, 1.0);
+		offset = projection * offset; // from view to clip-space
+		offset.xy /= offset.w; // perspective divide
+		offset.xy = offset.xy * 0.5 + 0.5; // transform to range 0.0 - 1.0
+        
+		// get sampled depth
+		float sampleDepth = -texture(gPositionDepth, offset.xy).w; // Get depth value of kernel sampled
+        
+		// range check & accumulate
+		float depthDiff = abs(fragPos.z - sampleDepth );
+		float rangeCheck = smoothstep(0.0, 1.0, radius / depthDiff);
+
+		if (depthDiff > 0.0 && depthDiff < radius)
+		{
+			occlusion += (sampleDepth >= sampled.z ? 1.0 : 0.0) * rangeCheck;  
+		}
+		  
+    }
+
+    occlusion = 1.0 - (occlusion / kernelSize);
+
+	FragColor = pow(occlusion, strength);
+}

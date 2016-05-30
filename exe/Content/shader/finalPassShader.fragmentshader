@@ -1,0 +1,62 @@
+#version 420 core
+
+out vec4 color; // out to default framebuffer
+
+uniform sampler2D texUnit; // the final color that want to output
+uniform sampler2D bloomBlur; // bloom texture ready to mix
+uniform sampler2D lensflareTex; // lensflare ready to mix
+uniform sampler2D uLensDirtTex; // full resolution dirt texture
+uniform sampler2D uLensStarTex; // diffraction starburst texture
+
+uniform bool bloom;
+uniform bool lensflare;
+uniform mat4 uLensStarMatrix; // camera rotation metric for starburst
+
+uniform float fade;
+
+noperspective in vec2 vTexcoord;
+
+vec3 ToneMapFilmic_Hejl2015(vec3 hdr, float whitePt)
+{
+	vec4 vh = vec4(hdr, whitePt);
+	vec4 va = (1.425 * vh) + 0.05;
+	vec4 vf = ( (vh * va + 0.004) / ( (vh * (va + 0.55) + 0.0491) ) ) - 0.0821;
+	return vf.rgb / vf.www;
+}
+
+
+void main()
+{
+	vec2 texcoord = vTexcoord;
+
+	// lensflare preparation
+	vec3 lensMod = texture(uLensDirtTex, vTexcoord).rgb;
+	vec2 lensStarTexcoord = (uLensStarMatrix * vec4(vTexcoord, 1.0, 1.0)).xy;
+	lensMod += texture(uLensStarTex, lensStarTexcoord).rgb;
+
+	// color init
+	vec3 finalColor = texture(texUnit, texcoord).rgb;
+	vec3 bloomColor = texture(bloomBlur, texcoord).rgb;
+	vec3 lensflareColor = texture(lensflareTex, vTexcoord).rgb * lensMod;
+
+	if(bloom)
+	{
+		finalColor += bloomColor; // additive blending
+	}
+
+	if(lensflare)
+	{
+		finalColor += lensflareColor; 
+	}
+
+    // Exposure tone mapping
+    vec3 mapped = vec3(1.0) - exp(-finalColor * fade); // at night is 0.5 .. else 1.75
+
+	// tone mapping filmic stlye
+	vec3 result = ToneMapFilmic_Hejl2015(mapped, 1.5);
+
+	color = vec4(result, 1.0);
+
+}
+
+	

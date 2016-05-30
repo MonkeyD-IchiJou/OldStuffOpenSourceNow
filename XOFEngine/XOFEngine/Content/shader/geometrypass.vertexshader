@@ -1,0 +1,85 @@
+#version 420 core
+
+// Input vertex data, different for all executions of this shader.
+layout(location = 0) in vec3 vertexPosition_modelspace; // position
+layout(location = 1) in vec3 vertexNormal_modelspace; // normal
+layout(location = 2) in vec2 vertexTexCoord; // texcoord
+layout (location = 3) in vec3 tangent; // tangent 
+
+out VS_OUT
+{
+	smooth vec2 TexCoord;
+    smooth vec3 Normal;
+	smooth vec3 FragPos;
+	smooth vec3 NormalView;
+	smooth vec3 FragPosView;
+
+	smooth mat3 TBN;
+
+	smooth vec4 vPosition;
+	smooth vec4 vPrevPosition;
+
+	smooth vec3 projCoords;
+
+	smooth float bias;
+
+}vs_out;
+
+layout (std140, binding = 0) uniform Matrices
+{
+    mat4 projection;
+    mat4 view;
+};
+
+uniform mat4 Model;
+uniform mat4 uPrevModelViewProjectionMat;
+uniform mat4 lightSpaceMatrix;
+
+uniform vec3 lightDir;
+
+void main()
+{
+	vec4 PosL = vec4(0, 0, 0, 0);
+	vec4 NormalL = vec4(0, 0, 0, 0);
+	
+	PosL = vec4(vertexPosition_modelspace.xyz, 1.0);
+	NormalL = vec4(vertexNormal_modelspace, 0.0);
+
+	vec4 viewPos = view * Model * PosL;
+	vs_out.FragPosView = viewPos.xyz;
+
+	vec4 worldPos = Model * PosL;
+	vs_out.FragPos = worldPos.xyz;
+
+	vs_out.vPosition = projection * view * worldPos;
+	vs_out.vPrevPosition = uPrevModelViewProjectionMat * PosL;
+	gl_Position = vs_out.vPosition;
+
+	vs_out.TexCoord = vertexTexCoord;
+
+	mat3 normalMatrix = transpose(inverse(mat3( Model)));
+	mat3 normalMatrixView = transpose(inverse(mat3(view * Model)));
+
+	vec3 normal = normalMatrix * NormalL.xyz;  // it is to make sure that the normal is still correct when non-uniform scaling // do it in cpu instead
+	vec3 normalview = normalMatrixView * NormalL.xyz;
+	vs_out.Normal = normalize( normal );
+	vs_out.NormalView = normalize( normalview );
+
+	vec4 fragPosLightSpace = lightSpaceMatrix * worldPos;
+	// perform perspective divide
+    vec3 projCoords = fragPosLightSpace.xyz / fragPosLightSpace.w;
+    // Transform to [0,1] range
+    vs_out.projCoords = projCoords * 0.5 + 0.5;
+
+	vs_out.bias = max(0.005 * (1.0 - dot(normal, lightDir)), 0.0005); 
+}
+
+
+
+
+
+
+
+
+
+

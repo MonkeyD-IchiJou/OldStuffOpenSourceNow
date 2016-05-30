@@ -1,0 +1,23 @@
+#version 420 core
+
+// Input vertex data, different for all executions of this shader.
+layout(location = 0) in vec3 position;
+
+out vec3 TexCoords;
+
+layout (std140, binding = 0) uniform Matrices
+{
+    mat4 projection;
+    mat4 view;
+};
+
+
+void main()
+{
+	mat4 v = mat4(mat3(view)); // so that the stupid skybos will stay around
+	vec4 pos = projection * v * vec4(position, 1.0);
+    gl_Position = pos.xyww; // depth cheat
+    TexCoords = position;
+}
+
+

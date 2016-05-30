@@ -1,0 +1,42 @@
+#version 420 core
+
+// Input vertex data, different for all executions of this shader.
+layout(location = 0) in vec3 position;
+layout(location = 1) in vec2 textureCoords;
+
+out vec2 pass_textureCoords;
+
+uniform vec3 translation;
+
+layout (std140, binding = 0) uniform Matrices
+{
+    mat4 projection;
+    mat4 view;
+};
+
+uniform int mode; // 0 == 2D, 1 == follow3D, 2 == 3D
+uniform mat4 middleTranslation;
+uniform mat4 rotation;
+uniform mat4 translationmat;
+
+void main()
+{
+	if(mode == 1)
+	{
+		gl_Position = projection  * middleTranslation * view * translationmat * vec4(position, 1.0);
+	}
+
+	else if(mode == 0)
+	{
+		gl_Position = vec4(position + translation * vec3(2.0, 2.0, 1.0), 1.0);
+	}
+
+	else
+	{
+		gl_Position = projection * view  * rotation * vec4(position + translation * vec3(2.0, 2.0, 1.0), 1.0);
+	}
+
+	pass_textureCoords = textureCoords;
+}
+
+

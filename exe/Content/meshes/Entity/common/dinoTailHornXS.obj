@@ -1,0 +1,45 @@
+# This file uses centimeters as units for non-parametric coordinates.
+
+mtllib dinoTailHornXS.mtl
+g dinoTailHornXS:default2
+v -0.000123 0.069075 -0.118754
+v -0.116221 0.090222 -0.026458
+v -0.000123 0.111369 0.065839
+v 0.115974 0.090222 -0.026458
+v -0.000123 0.252018 -0.055582
+vt 0.500000 0.000000
+vt 0.750000 0.250000
+vt 0.250000 0.250000
+vt 0.500000 0.500000
+vt 0.250000 0.500000
+vt 0.375000 0.500000
+vt 0.500000 1.000000
+vt 0.500000 0.500000
+vt 0.625000 0.500000
+vt 0.750000 0.500000
+vn 0.000000 -0.974742 0.223333
+vn 0.000000 -0.974742 0.223333
+vn 0.000000 -0.974742 0.223333
+vn 0.000000 -0.974742 0.223333
+vn 0.000000 -0.974742 0.223333
+vn 0.000000 -0.974742 0.223333
+vn -0.569038 0.268403 -0.777274
+vn -0.569039 0.268402 -0.777274
+vn -0.569039 0.268402 -0.777274
+vn -0.584734 0.530109 0.614060
+vn -0.584734 0.530109 0.614060
+vn -0.584734 0.530109 0.614060
+vn 0.584734 0.530109 0.614061
+vn 0.584734 0.530109 0.614061
+vn 0.584734 0.530109 0.614061
+vn 0.569039 0.268402 -0.777274
+vn 0.569039 0.268402 -0.777274
+vn 0.569039 0.268402 -0.777274
+s off
+g dinoTailHornXS:initialShadingGroup dinoTailHornXS:initialShadingGroup9 dinoTailHornXS:initialShadingGroup10 dinoTailHornXS:initialShadingGroup11 dinoTailHornXS:initialShadingGroup12 dinoTailHornXS:initialShadingGroup13 dinoTailHornXS:initialShadingGroup14 dinoTailHornXS:initialShadingGroup15 dinoTailHornXS:initialShadingGroup16 dinoTailHornXS:initialShadingGroup17 dinoTailHornXS:initialShadingGroup18 dinoTailHornXS:pPyramid3 dinoTailHornXS:polySurface7 dinoTailHornXS:polySurface11 dinoTailHornXS:polySurface15 dinoTailHornXS:polySurface18 dinoTailHornXS:polySurface25 dinoTailHornXS:polySurface26 dinoTailHornXS:polySurface27 dinoTailHornXS:polySurface28 dinoTailHornXS:polySurface30 dinoTailHornXS:polySurface31 dinoTailHornXS:polySurface35 dinoTailHornXS:polySurface91 dinoTailHornXS:polySurface100 dinoTailHornXS:polySurface101 dinoTailHornXS:polySurface102 dinoTailHornXS:polySurface103 initialShadingGroup dinoTailHornXS:polySurface1
+f 1/1/1 4/2/2 2/3/3
+f 2/3/4 4/2/5 3/4/6
+f 1/5/7 2/6/8 5/7/9
+f 2/6/10 3/8/11 5/7/12
+f 3/8/13 4/9/14 5/7/15
+f 4/9/16 1/10/17 5/7/18

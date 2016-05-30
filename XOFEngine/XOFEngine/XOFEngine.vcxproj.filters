@@ -1,0 +1,947 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\app">
+      <UniqueIdentifier>{94627f40-a707-4dc3-aca2-a2e669617002}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\app">
+      <UniqueIdentifier>{dbd911c6-c00a-4cf7-b8b3-fdb502b5885b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\scene">
+      <UniqueIdentifier>{8ebf4555-6db9-484d-94ba-a4f45d7f0c0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\entity">
+      <UniqueIdentifier>{288710cc-029f-4f5b-bdc0-50d5e1bebbef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\entity">
+      <UniqueIdentifier>{43cb72a5-c6e8-4557-b836-99a5c66c02af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\component">
+      <UniqueIdentifier>{cf0f3455-0aed-4f8e-9e9c-3e7b376dd5e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\component">
+      <UniqueIdentifier>{1d503ef2-e08c-45ce-b518-f90606414e24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\world">
+      <UniqueIdentifier>{2ea9e756-5be7-4e14-9d9e-cc789de41b1e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\world">
+      <UniqueIdentifier>{f7583e73-5d1d-49cd-877c-91df920ae98f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\engine">
+      <UniqueIdentifier>{2b6c1dc5-7fa4-47b4-9eb3-8ece5eb5a3ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\engine">
+      <UniqueIdentifier>{8072eb09-4320-4e38-9f50-c35651a19333}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\shader">
+      <UniqueIdentifier>{6f065b32-88f7-4ad1-8552-7cf50018a128}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\shader">
+      <UniqueIdentifier>{c06609da-28d1-4916-a4ad-b9dc1c444298}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{7d998a7d-bba7-4493-909f-69526a6c7819}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\FS">
+      <UniqueIdentifier>{7f1b9c6c-1bc8-4115-a627-54f28886ddf6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\VS">
+      <UniqueIdentifier>{38cfd230-cc8e-40fb-b887-e38015f7fc05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\mesh">
+      <UniqueIdentifier>{06bcde77-423a-4f0c-821d-59f0fab08ed9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\mesh">
+      <UniqueIdentifier>{0b365a0c-7125-414b-90d4-293e0284d2dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\UBO">
+      <UniqueIdentifier>{75908956-4394-492c-9fd9-54491aef1e15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\UBO">
+      <UniqueIdentifier>{56638cb7-5cba-4dd7-a511-44fbf04bb1d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\FBO">
+      <UniqueIdentifier>{b6b576b7-302a-4ffc-b171-e30312b3a4d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\FBO">
+      <UniqueIdentifier>{c2c31699-a348-4042-8712-cd04c45f38a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\GS">
+      <UniqueIdentifier>{00ca1c68-9037-4079-8b61-663fbbb01ce7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\texture">
+      <UniqueIdentifier>{8d7be929-95da-4492-9078-d7b634f35813}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\texture">
+      <UniqueIdentifier>{043554c2-6be7-44ad-93b2-1a2961fdb4cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\component\camera">
+      <UniqueIdentifier>{9cdc19b5-9ec5-48df-9869-73e19edd8177}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\component\camera">
+      <UniqueIdentifier>{eb5bd45f-260a-47f0-a845-1d2f7fe47672}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LUA">
+      <UniqueIdentifier>{164316ed-e400-43cd-8b64-97a8586d9d01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\component\collider">
+      <UniqueIdentifier>{57415a40-48a9-4614-bd20-3f4ae5c3de9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\component\light">
+      <UniqueIdentifier>{c2d2d350-e8e5-4f09-b272-3adbaf46a9e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\component\renderer">
+      <UniqueIdentifier>{e05007f8-5fdc-4b55-9501-423bca234155}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\component\collider">
+      <UniqueIdentifier>{2c435a8f-06e5-4547-ac75-e6daa087eda6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\component\light">
+      <UniqueIdentifier>{559aeca0-da27-47a0-bd36-d16d0174203e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\component\renderer">
+      <UniqueIdentifier>{dd1ee0e1-6a80-47fc-9f1e-59ad92ab413c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\component\gui">
+      <UniqueIdentifier>{f4c79013-06f2-46ec-9641-16d0a71257aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\component\script">
+      <UniqueIdentifier>{6a51ed00-d1b2-48c0-826d-a38faebfff02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\component\gui">
+      <UniqueIdentifier>{f79f5a80-ac0d-4e55-ab32-ee820a62bedb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\component\script">
+      <UniqueIdentifier>{6ec32592-adf5-4950-8468-51e9c131d20a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\fonts">
+      <UniqueIdentifier>{ffc63c65-b22f-4d01-b9b2-def6408a6e32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\fonts">
+      <UniqueIdentifier>{3836e7cf-c872-4290-b351-68a85fc34fe0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\component\transformation">
+      <UniqueIdentifier>{ab638222-cb27-4bdf-a33a-495c049a4ffc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\component\transformation">
+      <UniqueIdentifier>{9ab7b76f-bbe4-49db-9dd9-bc55bb3dd027}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\scene">
+      <UniqueIdentifier>{c4324ac2-001f-426d-8aa9-3cd796d10610}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\component\bullet">
+      <UniqueIdentifier>{07cd1013-5026-4171-825e-701a02989436}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\component\bullet">
+      <UniqueIdentifier>{84f2f27f-3fda-409f-b192-1b35ada4eb03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\player">
+      <UniqueIdentifier>{b9e6829d-064b-4649-8173-bf5ecdec6829}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\player">
+      <UniqueIdentifier>{1c10e568-9365-441d-a253-fa452e02b5e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\component\ai">
+      <UniqueIdentifier>{ba4908be-7aff-4715-b978-4e3beae69606}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\component\ai">
+      <UniqueIdentifier>{caa5658b-b866-41f4-9d2a-4fc966eca56f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GameApplication.cpp">
+      <Filter>Source Files\app</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lapi.c">
+      <Filter>LUA</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lauxlib.c">
+      <Filter>LUA</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lbaselib.c">
+      <Filter>LUA</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lbitlib.c">
+      <Filter>LUA</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lcode.c">
+      <Filter>LUA</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lcorolib.c">
+      <Filter>LUA</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lctype.c">
+      <Filter>LUA</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\ldblib.c">
+      <Filter>LUA</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\ldebug.c">
+      <Filter>LUA</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\ldo.c">
+      <Filter>LUA</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\ldump.c">
+      <Filter>LUA</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lfunc.c">
+      <Filter>LUA</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lgc.c">
+      <Filter>LUA</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\linit.c">
+      <Filter>LUA</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\liolib.c">
+      <Filter>LUA</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\llex.c">
+      <Filter>LUA</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lmathlib.c">
+      <Filter>LUA</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lmem.c">
+      <Filter>LUA</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\loadlib.c">
+      <Filter>LUA</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lobject.c">
+      <Filter>LUA</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lopcodes.c">
+      <Filter>LUA</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\loslib.c">
+      <Filter>LUA</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lparser.c">
+      <Filter>LUA</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lstate.c">
+      <Filter>LUA</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lstring.c">
+      <Filter>LUA</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lstrlib.c">
+      <Filter>LUA</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\ltable.c">
+      <Filter>LUA</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\ltablib.c">
+      <Filter>LUA</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\ltm.c">
+      <Filter>LUA</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lundump.c">
+      <Filter>LUA</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lutf8lib.c">
+      <Filter>LUA</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lvm.c">
+      <Filter>LUA</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lzio.c">
+      <Filter>LUA</Filter>
+    </ClCompile>
+    <ClCompile Include="GLFW_Window.cpp">
+      <Filter>Source Files\app</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelLibrary.cpp">
+      <Filter>Source Files\mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureLibrary.cpp">
+      <Filter>Source Files\texture</Filter>
+    </ClCompile>
+    <ClCompile Include="AxisLineMesh.cpp">
+      <Filter>Source Files\mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="BasicMesh.cpp">
+      <Filter>Source Files\mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugMesh.cpp">
+      <Filter>Source Files\mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="Mesh.cpp">
+      <Filter>Source Files\mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Source Files\texture</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureData.cpp">
+      <Filter>Source Files\texture</Filter>
+    </ClCompile>
+    <ClCompile Include="GrassMesh.cpp">
+      <Filter>Source Files\mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="debugShader.cpp">
+      <Filter>Source Files\shader</Filter>
+    </ClCompile>
+    <ClCompile Include="depthShader.cpp">
+      <Filter>Source Files\shader</Filter>
+    </ClCompile>
+    <ClCompile Include="FinalPassShader.cpp">
+      <Filter>Source Files\shader</Filter>
+    </ClCompile>
+    <ClCompile Include="FontShader.cpp">
+      <Filter>Source Files\shader</Filter>
+    </ClCompile>
+    <ClCompile Include="FXAAShader.cpp">
+      <Filter>Source Files\shader</Filter>
+    </ClCompile>
+    <ClCompile Include="GausianBlurShader.cpp">
+      <Filter>Source Files\shader</Filter>
+    </ClCompile>
+    <ClCompile Include="GeometryPassShader.cpp">
+      <Filter>Source Files\shader</Filter>
+    </ClCompile>
+    <ClCompile Include="GrassShader.cpp">
+      <Filter>Source Files\shader</Filter>
+    </ClCompile>
+    <ClCompile Include="LensFlareShader.cpp">
+      <Filter>Source Files\shader</Filter>
+    </ClCompile>
+    <ClCompile Include="LightShader.cpp">
+      <Filter>Source Files\shader</Filter>
+    </ClCompile>
+    <ClCompile Include="MotionBlurShader.cpp">
+      <Filter>Source Files\shader</Filter>
+    </ClCompile>
+    <ClCompile Include="NullShader.cpp">
+      <Filter>Source Files\shader</Filter>
+    </ClCompile>
+    <ClCompile Include="PostProcessPassShader.cpp">
+      <Filter>Source Files\shader</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderHeaven.cpp">
+      <Filter>Source Files\shader</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderProgram.cpp">
+      <Filter>Source Files\shader</Filter>
+    </ClCompile>
+    <ClCompile Include="SimpleShader.cpp">
+      <Filter>Source Files\shader</Filter>
+    </ClCompile>
+    <ClCompile Include="SkyboxShader.cpp">
+      <Filter>Source Files\shader</Filter>
+    </ClCompile>
+    <ClCompile Include="SSAOBlurShader.cpp">
+      <Filter>Source Files\shader</Filter>
+    </ClCompile>
+    <ClCompile Include="SSAOShader.cpp">
+      <Filter>Source Files\shader</Filter>
+    </ClCompile>
+    <ClCompile Include="MatricesUBO.cpp">
+      <Filter>Source Files\UBO</Filter>
+    </ClCompile>
+    <ClCompile Include="UBO.cpp">
+      <Filter>Source Files\UBO</Filter>
+    </ClCompile>
+    <ClCompile Include="Component.cpp">
+      <Filter>Source Files\component</Filter>
+    </ClCompile>
+    <ClCompile Include="ComponentsPool.cpp">
+      <Filter>Source Files\component</Filter>
+    </ClCompile>
+    <ClCompile Include="TransformationC.cpp">
+      <Filter>Source Files\component\transformation</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Source Files\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="EntitiesPool.cpp">
+      <Filter>Source Files\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="MeshRendererC.cpp">
+      <Filter>Source Files\component\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="RendererC.cpp">
+      <Filter>Source Files\component\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="ColliderC.cpp">
+      <Filter>Source Files\component\collider</Filter>
+    </ClCompile>
+    <ClCompile Include="SphereColliderC.cpp">
+      <Filter>Source Files\component\collider</Filter>
+    </ClCompile>
+    <ClCompile Include="AABB.cpp">
+      <Filter>Source Files\component\collider</Filter>
+    </ClCompile>
+    <ClCompile Include="LightC.cpp">
+      <Filter>Source Files\component\light</Filter>
+    </ClCompile>
+    <ClCompile Include="DirLightC.cpp">
+      <Filter>Source Files\component\light</Filter>
+    </ClCompile>
+    <ClCompile Include="GUIText.cpp">
+      <Filter>Source Files\component\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraC.cpp">
+      <Filter>Source Files\component\camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Line.cpp">
+      <Filter>Source Files\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="PointLightC.cpp">
+      <Filter>Source Files\component\light</Filter>
+    </ClCompile>
+    <ClCompile Include="Word.cpp">
+      <Filter>Source Files\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="FontType.cpp">
+      <Filter>Source Files\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="FontsLibrary.cpp">
+      <Filter>Source Files\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="TextMeshCreator.cpp">
+      <Filter>Source Files\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="TextMesh.cpp">
+      <Filter>Source Files\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="MetaFile.cpp">
+      <Filter>Source Files\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="Character.cpp">
+      <Filter>Source Files\fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptC.cpp">
+      <Filter>Source Files\component\script</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphicEngine.cpp">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="GUIrenderEngine.cpp">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphicScale.cpp">
+      <Filter>Source Files\app</Filter>
+    </ClCompile>
+    <ClCompile Include="World.cpp">
+      <Filter>Source Files\world</Filter>
+    </ClCompile>
+    <ClCompile Include="depthMapFBO.cpp">
+      <Filter>Source Files\FBO</Filter>
+    </ClCompile>
+    <ClCompile Include="finalFBO.cpp">
+      <Filter>Source Files\FBO</Filter>
+    </ClCompile>
+    <ClCompile Include="gbuffer.cpp">
+      <Filter>Source Files\FBO</Filter>
+    </ClCompile>
+    <ClCompile Include="pbuffer.cpp">
+      <Filter>Source Files\FBO</Filter>
+    </ClCompile>
+    <ClCompile Include="skyboxbuffer.cpp">
+      <Filter>Source Files\FBO</Filter>
+    </ClCompile>
+    <ClCompile Include="ssaobuffer.cpp">
+      <Filter>Source Files\FBO</Filter>
+    </ClCompile>
+    <ClCompile Include="pingpongFBO.cpp">
+      <Filter>Source Files\FBO</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="scenebase.cpp">
+      <Filter>Source Files\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="lua_backend.cpp">
+      <Filter>Source Files\app</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene3D.cpp">
+      <Filter>Source Files\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>Source Files\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="gl_backend.cpp">
+      <Filter>Source Files\app</Filter>
+    </ClCompile>
+    <ClCompile Include="EllipsoidColliderC.cpp">
+      <Filter>Source Files\component\collider</Filter>
+    </ClCompile>
+    <ClCompile Include="commonShader.cpp">
+      <Filter>Source Files\shader</Filter>
+    </ClCompile>
+    <ClCompile Include="MeshColliderC.cpp">
+      <Filter>Source Files\component\collider</Filter>
+    </ClCompile>
+    <ClCompile Include="TriggerC.cpp">
+      <Filter>Source Files\component\collider</Filter>
+    </ClCompile>
+    <ClCompile Include="BulletC.cpp">
+      <Filter>Source Files\component\bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerManager.cpp">
+      <Filter>Source Files\player</Filter>
+    </ClCompile>
+    <ClCompile Include="LineMesh.cpp">
+      <Filter>Source Files\mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="LineRendererC.cpp">
+      <Filter>Source Files\component\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="DinoAIC.cpp">
+      <Filter>Source Files\component\ai</Filter>
+    </ClCompile>
+    <ClCompile Include="Canvas.cpp">
+      <Filter>Source Files\component\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="Collectable.cpp">
+      <Filter>Source Files\app</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GameApplication.h">
+      <Filter>Header Files\app</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lapi.h">
+      <Filter>LUA</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lauxlib.h">
+      <Filter>LUA</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lcode.h">
+      <Filter>LUA</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lctype.h">
+      <Filter>LUA</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\ldebug.h">
+      <Filter>LUA</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\ldo.h">
+      <Filter>LUA</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lfunc.h">
+      <Filter>LUA</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lgc.h">
+      <Filter>LUA</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\llex.h">
+      <Filter>LUA</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\llimits.h">
+      <Filter>LUA</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lmem.h">
+      <Filter>LUA</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lobject.h">
+      <Filter>LUA</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lopcodes.h">
+      <Filter>LUA</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lparser.h">
+      <Filter>LUA</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lprefix.h">
+      <Filter>LUA</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lstate.h">
+      <Filter>LUA</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lstring.h">
+      <Filter>LUA</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\ltable.h">
+      <Filter>LUA</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\ltm.h">
+      <Filter>LUA</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lua.h">
+      <Filter>LUA</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lua.hpp">
+      <Filter>LUA</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\luaconf.h">
+      <Filter>LUA</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lualib.h">
+      <Filter>LUA</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lundump.h">
+      <Filter>LUA</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lvm.h">
+      <Filter>LUA</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lzio.h">
+      <Filter>LUA</Filter>
+    </ClInclude>
+    <ClInclude Include="GLFW_Window.h">
+      <Filter>Header Files\app</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelLibrary.h">
+      <Filter>Header Files\mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureLibrary.h">
+      <Filter>Header Files\texture</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicMesh.h">
+      <Filter>Header Files\mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="AxisLineMesh.h">
+      <Filter>Header Files\mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugMesh.h">
+      <Filter>Header Files\mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="Mesh.h">
+      <Filter>Header Files\mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Header Files\texture</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureData.h">
+      <Filter>Header Files\texture</Filter>
+    </ClInclude>
+    <ClInclude Include="GLH.h">
+      <Filter>Header Files\app</Filter>
+    </ClInclude>
+    <ClInclude Include="GrassMesh.h">
+      <Filter>Header Files\mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="debugShader.h">
+      <Filter>Header Files\shader</Filter>
+    </ClInclude>
+    <ClInclude Include="depthShader.h">
+      <Filter>Header Files\shader</Filter>
+    </ClInclude>
+    <ClInclude Include="FinalPassShader.h">
+      <Filter>Header Files\shader</Filter>
+    </ClInclude>
+    <ClInclude Include="FontShader.h">
+      <Filter>Header Files\shader</Filter>
+    </ClInclude>
+    <ClInclude Include="FXAAShader.h">
+      <Filter>Header Files\shader</Filter>
+    </ClInclude>
+    <ClInclude Include="GausianBlurShader.h">
+      <Filter>Header Files\shader</Filter>
+    </ClInclude>
+    <ClInclude Include="GeometryPassShader.h">
+      <Filter>Header Files\shader</Filter>
+    </ClInclude>
+    <ClInclude Include="GrassShader.h">
+      <Filter>Header Files\shader</Filter>
+    </ClInclude>
+    <ClInclude Include="LensFlareShader.h">
+      <Filter>Header Files\shader</Filter>
+    </ClInclude>
+    <ClInclude Include="LightShader.h">
+      <Filter>Header Files\shader</Filter>
+    </ClInclude>
+    <ClInclude Include="MotionBlurShader.h">
+      <Filter>Header Files\shader</Filter>
+    </ClInclude>
+    <ClInclude Include="NullShader.h">
+      <Filter>Header Files\shader</Filter>
+    </ClInclude>
+    <ClInclude Include="PostProcessPassShader.h">
+      <Filter>Header Files\shader</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderFiles.h">
+      <Filter>Header Files\shader</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderHeaven.h">
+      <Filter>Header Files\shader</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderProgram.h">
+      <Filter>Header Files\shader</Filter>
+    </ClInclude>
+    <ClInclude Include="SimpleShader.h">
+      <Filter>Header Files\shader</Filter>
+    </ClInclude>
+    <ClInclude Include="SkyboxShader.h">
+      <Filter>Header Files\shader</Filter>
+    </ClInclude>
+    <ClInclude Include="SSAOBlurShader.h">
+      <Filter>Header Files\shader</Filter>
+    </ClInclude>
+    <ClInclude Include="SSAOShader.h">
+      <Filter>Header Files\shader</Filter>
+    </ClInclude>
+    <ClInclude Include="com_decla.h">
+      <Filter>Header Files\app</Filter>
+    </ClInclude>
+    <ClInclude Include="MatricesUBO.h">
+      <Filter>Header Files\UBO</Filter>
+    </ClInclude>
+    <ClInclude Include="UBO.h">
+      <Filter>Header Files\UBO</Filter>
+    </ClInclude>
+    <ClInclude Include="Component.h">
+      <Filter>Header Files\component</Filter>
+    </ClInclude>
+    <ClInclude Include="ComponentsPool.h">
+      <Filter>Header Files\component</Filter>
+    </ClInclude>
+    <ClInclude Include="TransformationC.h">
+      <Filter>Header Files\component\transformation</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Header Files\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="EntitiesPool.h">
+      <Filter>Header Files\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="MeshRendererC.h">
+      <Filter>Header Files\component\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="RendererC.h">
+      <Filter>Header Files\component\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="ColliderC.h">
+      <Filter>Header Files\component\collider</Filter>
+    </ClInclude>
+    <ClInclude Include="SphereColliderC.h">
+      <Filter>Header Files\component\collider</Filter>
+    </ClInclude>
+    <ClInclude Include="AABB.h">
+      <Filter>Header Files\component\collider</Filter>
+    </ClInclude>
+    <ClInclude Include="LightC.h">
+      <Filter>Header Files\component\light</Filter>
+    </ClInclude>
+    <ClInclude Include="DirLightC.h">
+      <Filter>Header Files\component\light</Filter>
+    </ClInclude>
+    <ClInclude Include="GUIText.h">
+      <Filter>Header Files\component\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="Line.h">
+      <Filter>Header Files\fonts</Filter>
+    </ClInclude>
+    <ClInclude Include="PointLightC.h">
+      <Filter>Header Files\component\light</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraC.h">
+      <Filter>Header Files\component\camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Word.h">
+      <Filter>Header Files\fonts</Filter>
+    </ClInclude>
+    <ClInclude Include="FontsLibrary.h">
+      <Filter>Header Files\fonts</Filter>
+    </ClInclude>
+    <ClInclude Include="FontType.h">
+      <Filter>Header Files\fonts</Filter>
+    </ClInclude>
+    <ClInclude Include="TextMesh.h">
+      <Filter>Header Files\fonts</Filter>
+    </ClInclude>
+    <ClInclude Include="TextMeshCreator.h">
+      <Filter>Header Files\fonts</Filter>
+    </ClInclude>
+    <ClInclude Include="MetaFile.h">
+      <Filter>Header Files\fonts</Filter>
+    </ClInclude>
+    <ClInclude Include="Character.h">
+      <Filter>Header Files\fonts</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptC.h">
+      <Filter>Header Files\component\script</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphicEngine.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="GUIrenderEngine.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphicScale.h">
+      <Filter>Header Files\app</Filter>
+    </ClInclude>
+    <ClInclude Include="World.h">
+      <Filter>Header Files\world</Filter>
+    </ClInclude>
+    <ClInclude Include="skyboxbuffer.h">
+      <Filter>Header Files\FBO</Filter>
+    </ClInclude>
+    <ClInclude Include="pbuffer.h">
+      <Filter>Header Files\FBO</Filter>
+    </ClInclude>
+    <ClInclude Include="gbuffer.h">
+      <Filter>Header Files\FBO</Filter>
+    </ClInclude>
+    <ClInclude Include="finalFBO.h">
+      <Filter>Header Files\FBO</Filter>
+    </ClInclude>
+    <ClInclude Include="depthMapFBO.h">
+      <Filter>Header Files\FBO</Filter>
+    </ClInclude>
+    <ClInclude Include="ssaobuffer.h">
+      <Filter>Header Files\FBO</Filter>
+    </ClInclude>
+    <ClInclude Include="pingpongFBO.h">
+      <Filter>Header Files\FBO</Filter>
+    </ClInclude>
+    <ClInclude Include="componentsH_dclr.h">
+      <Filter>Header Files\app</Filter>
+    </ClInclude>
+    <ClInclude Include="scenebase.h">
+      <Filter>Header Files\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="LUACallbacks.h">
+      <Filter>Header Files\app</Filter>
+    </ClInclude>
+    <ClInclude Include="lua_backend.h">
+      <Filter>Header Files\app</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene3D.h">
+      <Filter>Header Files\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>Header Files\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="gl_backend.h">
+      <Filter>Header Files\app</Filter>
+    </ClInclude>
+    <ClInclude Include="EllipsoidColliderC.h">
+      <Filter>Header Files\component\collider</Filter>
+    </ClInclude>
+    <ClInclude Include="commonShader.h">
+      <Filter>Header Files\shader</Filter>
+    </ClInclude>
+    <ClInclude Include="MeshColliderC.h">
+      <Filter>Header Files\component\collider</Filter>
+    </ClInclude>
+    <ClInclude Include="TriggerC.h">
+      <Filter>Header Files\component\collider</Filter>
+    </ClInclude>
+    <ClInclude Include="BulletC.h">
+      <Filter>Header Files\component\bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerManager.h">
+      <Filter>Header Files\player</Filter>
+    </ClInclude>
+    <ClInclude Include="LineMesh.h">
+      <Filter>Header Files\mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="LineRendererC.h">
+      <Filter>Header Files\component\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="DinoAIC.h">
+      <Filter>Header Files\component\ai</Filter>
+    </ClInclude>
+    <ClInclude Include="Canvas.h">
+      <Filter>Header Files\component\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="Collectable.h">
+      <Filter>Header Files\app</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\shader\basic.vertexshader">
+      <Filter>Shaders\VS</Filter>
+    </None>
+    <None Include="Content\shader\debug.fragmentshader">
+      <Filter>Shaders\FS</Filter>
+    </None>
+    <None Include="Content\shader\debug.vertexshader">
+      <Filter>Shaders\VS</Filter>
+    </None>
+    <None Include="Content\shader\depthShader.fragmentshader">
+      <Filter>Shaders\FS</Filter>
+    </None>
+    <None Include="Content\shader\depthShader.vertexshader">
+      <Filter>Shaders\VS</Filter>
+    </None>
+    <None Include="Content\shader\finalPassShader.fragmentshader">
+      <Filter>Shaders\FS</Filter>
+    </None>
+    <None Include="Content\shader\font.fragmentshader">
+      <Filter>Shaders\FS</Filter>
+    </None>
+    <None Include="Content\shader\font.vertexshader">
+      <Filter>Shaders\VS</Filter>
+    </None>
+    <None Include="Content\shader\FXAA.fragmentshader">
+      <Filter>Shaders\FS</Filter>
+    </None>
+    <None Include="Content\shader\Gausian1DShader.fragmentshader">
+      <Filter>Shaders\FS</Filter>
+    </None>
+    <None Include="Content\shader\geometrypass.vertexshader">
+      <Filter>Shaders\VS</Filter>
+    </None>
+    <None Include="Content\shader\grassShader.fragmentshader">
+      <Filter>Shaders\FS</Filter>
+    </None>
+    <None Include="Content\shader\geometrypass.fragmentshader">
+      <Filter>Shaders\FS</Filter>
+    </None>
+    <None Include="Content\shader\grassShader.geometryshader">
+      <Filter>Shaders\GS</Filter>
+    </None>
+    <None Include="Content\shader\grassShader.vertexshader">
+      <Filter>Shaders\VS</Filter>
+    </None>
+    <None Include="Content\shader\LensFlareShader.fragmentshader">
+      <Filter>Shaders\FS</Filter>
+    </None>
+    <None Include="Content\shader\lightpass.fragmentshader">
+      <Filter>Shaders\FS</Filter>
+    </None>
+    <None Include="Content\shader\lightpass.vertexshader">
+      <Filter>Shaders\VS</Filter>
+    </None>
+    <None Include="Content\shader\motionBlur.fragmentshader">
+      <Filter>Shaders\FS</Filter>
+    </None>
+    <None Include="Content\shader\nullshader.fragmentshader">
+      <Filter>Shaders\FS</Filter>
+    </None>
+    <None Include="Content\shader\PostProcessPass.fragmentshader">
+      <Filter>Shaders\FS</Filter>
+    </None>
+    <None Include="Content\shader\simpleShader.fragmentshader">
+      <Filter>Shaders\FS</Filter>
+    </None>
+    <None Include="Content\shader\skyboxShader.fragmentshader">
+      <Filter>Shaders\FS</Filter>
+    </None>
+    <None Include="Content\shader\nullshader.vertexshader">
+      <Filter>Shaders\VS</Filter>
+    </None>
+    <None Include="Content\shader\skyboxShader.vertexshader">
+      <Filter>Shaders\VS</Filter>
+    </None>
+    <None Include="Content\shader\ssaoBlur.fragmentshader">
+      <Filter>Shaders\FS</Filter>
+    </None>
+    <None Include="Content\shader\ssaoShader.fragmentshader">
+      <Filter>Shaders\FS</Filter>
+    </None>
+    <None Include="Content\shader\common.vertexshader">
+      <Filter>Shaders\VS</Filter>
+    </None>
+  </ItemGroup>
+</Project>

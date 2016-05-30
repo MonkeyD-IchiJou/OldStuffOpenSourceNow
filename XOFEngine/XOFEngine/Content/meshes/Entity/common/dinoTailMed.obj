@@ -1,0 +1,76 @@
+# This file uses centimeters as units for non-parametric coordinates.
+
+mtllib dinoTailMed.mtl
+g dinoTailMed:default1
+v -0.368534 -0.481359 0.337363
+v 0.389780 -0.481359 0.337363
+v -0.368534 0.276956 0.337363
+v 0.389780 0.276956 0.337363
+v -0.292230 0.057649 -0.334149
+v 0.313476 0.057649 -0.334149
+v -0.292230 -0.481359 -0.334149
+v 0.313476 -0.481359 -0.334149
+vt 0.375000 0.000000
+vt 0.625000 0.000000
+vt 0.375000 0.250000
+vt 0.625000 0.250000
+vt 0.375000 0.500000
+vt 0.625000 0.500000
+vt 0.375000 0.750000
+vt 0.625000 0.750000
+vt 0.375000 1.000000
+vt 0.625000 1.000000
+vt 0.875000 0.000000
+vt 0.875000 0.250000
+vt 0.125000 0.000000
+vt 0.125000 0.250000
+vn 0.000000 0.000000 1.000000
+vn 0.000000 0.000000 1.000000
+vn 0.000000 0.000000 1.000000
+vn 0.000000 0.000000 1.000000
+vn 0.000000 0.000000 1.000000
+vn 0.000000 0.000000 1.000000
+vn 0.000000 1.000000 0.000000
+vn 0.000000 1.000000 0.000000
+vn 0.000000 1.000000 0.000000
+vn 0.000000 1.000000 0.000000
+vn 0.000000 1.000000 0.000000
+vn 0.000000 1.000000 0.000000
+vn 0.000000 0.000000 -1.000000
+vn 0.000000 0.000000 -1.000000
+vn 0.000000 0.000000 -1.000000
+vn 0.000000 0.000000 -1.000000
+vn 0.000000 0.000000 -1.000000
+vn 0.000000 0.000000 -1.000000
+vn 0.000000 -1.000000 0.000000
+vn 0.000000 -1.000000 0.000000
+vn 0.000000 -1.000000 0.000000
+vn 0.000000 -1.000000 0.000000
+vn 0.000000 -1.000000 0.000000
+vn 0.000000 -1.000000 0.000000
+vn 1.000000 0.000000 0.000000
+vn 1.000000 0.000000 0.000000
+vn 1.000000 0.000000 0.000000
+vn 1.000000 0.000000 0.000000
+vn 1.000000 0.000000 0.000000
+vn 1.000000 0.000000 0.000000
+vn -1.000000 0.000000 -0.000000
+vn -1.000000 0.000000 -0.000000
+vn -1.000000 0.000000 -0.000000
+vn -1.000000 0.000000 -0.000000
+vn -1.000000 0.000000 -0.000000
+vn -1.000000 0.000000 -0.000000
+s off
+g dinoTailMed:initialShadingGroup dinoTailMed:initialShadingGroup1 dinoTailMed:initialShadingGroup2 dinoTailMed:initialShadingGroup3 dinoTailMed:initialShadingGroup4 dinoTailMed:initialShadingGroup5 dinoTailMed:initialShadingGroup6 dinoTailMed:initialShadingGroup7 dinoTailMed:initialShadingGroup8 dinoTailMed:initialShadingGroup9 dinoTailMed:initialShadingGroup10 dinoTailMed:pCube2 dinoTailMed:pPyramid2 dinoTailMed:polySurface2 dinoTailMed:polySurface3 dinoTailMed:polySurface4 dinoTailMed:polySurface6 dinoTailMed:polySurface8 dinoTailMed:polySurface10 dinoTailMed:polySurface12 dinoTailMed:polySurface14 dinoTailMed:polySurface16 dinoTailMed:polySurface19 dinoTailMed:polySurface20 dinoTailMed:polySurface22 dinoTailMed:polySurface88 dinoTailMed:polySurface89 initialShadingGroup dinoTailMed:polySurface1
+f 1/1/1 2/2/2 3/3/3
+f 3/3/4 2/2/5 4/4/6
+f 3/3/7 4/4/8 5/5/9
+f 5/5/10 4/4/11 6/6/12
+f 5/5/13 6/6/14 7/7/15
+f 7/7/16 6/6/17 8/8/18
+f 7/7/19 8/8/20 1/9/21
+f 1/9/22 8/8/23 2/10/24
+f 2/2/25 8/11/26 4/4/27
+f 4/4/28 8/11/29 6/12/30
+f 7/13/31 1/1/32 5/14/33
+f 5/14/34 1/1/35 3/3/36

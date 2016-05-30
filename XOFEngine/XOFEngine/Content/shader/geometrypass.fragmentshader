@@ -1,0 +1,101 @@
+#version 420 core
+layout (location = 0) out vec4 gPosition;
+layout (location = 1) out vec4 gNormal;
+layout (location = 2) out vec4 gDiffuse;
+layout (location = 3) out vec3 gNormalView;  // for other post processing like ssao and ssr
+layout (location = 4) out vec4 gPositionView;  // for other post processing like ssao and ssr
+layout (location = 5) out vec2 gVelocity; 
+
+in VS_OUT
+{
+	smooth vec2 TexCoord;
+    smooth vec3 Normal;
+	smooth vec3 FragPos;
+	smooth vec3 NormalView;
+	smooth vec3 FragPosView;
+
+	smooth mat3 TBN;
+
+	smooth vec4 vPosition;
+	smooth vec4 vPrevPosition;
+	smooth vec3 projCoords;
+
+	smooth float bias;
+
+} fs_in;
+
+
+uniform sampler2D shadowMap;
+uniform float shininess;
+uniform float emissive = 0;
+uniform vec3 objcolor;
+
+const float NEAR = 0.1; // projection matrix's near plane
+const float FAR = 500.0; // projection matrix's far plane
+float LinearizeDepth(float depth)
+{
+    float z = depth * 2.0 - 1.0; // Back to NDC 
+    return (2.0 * NEAR * FAR) / (FAR + NEAR - z * (FAR - NEAR));	
+}
+
+
+// calc shadow here also
+float ShadowCalculation()
+{
+	vec2 projcoords = fs_in.projCoords.xy;
+	float projdepth = fs_in.projCoords.z;
+
+	float shadow = 0.0;
+
+	vec2 texelSize = 1.0 / textureSize(shadowMap, 0);
+	
+	for(int x = -1; x <= 1; ++x)
+	{
+		for(int y = -1; y <= 1; ++y)
+		{
+			float pcfDepth = texture(shadowMap, projcoords + vec2(x, y) * texelSize).r; 
+			shadow += projdepth - fs_in.bias > pcfDepth ? 1.0 : 0.0;        
+		}    
+	}
+
+	shadow /= 9;
+
+	if(projdepth > 1.0)
+	{
+        shadow = 0.0;
+	}
+
+    return shadow;
+}
+
+void main()
+{
+	// firstly, settle the texture coordinates
+	vec2 texCoords = fs_in.TexCoord;
+
+	// diffuse
+	gDiffuse.rgb = objcolor;
+
+	// emissive store
+	gDiffuse.a = emissive;
+
+	// Store the fragment position vector in the first gbuffer texture
+	gPositionView.rgb = fs_in.FragPosView;
+	gPositionView.a = LinearizeDepth(gl_FragCoord.z);
+
+	gPosition.rgb = fs_in.FragPos;
+	gPosition.a = ShadowCalculation(); // store shadow occlusion
+
+	// Also store the per-fragment normals into the gbuffer
+	gNormal.rgb = fs_in.Normal;
+	gNormalView = fs_in.NormalView;
+
+	// shininess
+	gNormal.a = shininess;
+
+	// velocity buffer calc
+	vec2 a = (fs_in.vPosition.xy / fs_in.vPosition.w) * 0.5 + 0.5;
+    vec2 b = (fs_in.vPrevPosition.xy / fs_in.vPrevPosition.w) * 0.5 + 0.5;
+    gVelocity = a - b;
+
+}

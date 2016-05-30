@@ -1,0 +1,31 @@
+﻿Build started 5/31/2016 12:09:41 AM.
+     1>Project "C:\Users\Chuk Yih Jou\Desktop\OldGLProj\XOFEngine\common\common.vcxproj" on node 2 (Rebuild target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /GL /D WIN32 /D NDEBUG /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Release\\" /Fd"x64\Release\vc120.pdb" /Gd /TP /errorReport:prompt App.cpp Attenuation.cpp AttenuationFormula.cpp Frustum.cpp Keyboard.cpp MatrixStack.cpp Mouse.cpp quat4.cpp TESTPLANE.cpp timer.cpp
+         App.cpp
+         Attenuation.cpp
+         AttenuationFormula.cpp
+         Frustum.cpp
+         Keyboard.cpp
+         MatrixStack.cpp
+         Mouse.cpp
+         quat4.cpp
+         TESTPLANE.cpp
+         timer.cpp
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\Lib.exe /OUT:"C:\Users\Chuk Yih Jou\Desktop\OldGLProj\XOFEngine\x64\Release\common.lib" /NOLOGO /MACHINE:X64 /LTCG /MACHINE:X64 x64\Release\App.obj
+         x64\Release\Attenuation.obj
+         x64\Release\AttenuationFormula.obj
+         x64\Release\Frustum.obj
+         x64\Release\Keyboard.obj
+         x64\Release\MatrixStack.obj
+         x64\Release\Mouse.obj
+         x64\Release\quat4.obj
+         x64\Release\TESTPLANE.obj
+         x64\Release\timer.obj
+         common.vcxproj -> C:\Users\Chuk Yih Jou\Desktop\OldGLProj\XOFEngine\x64\Release\common.lib
+     1>Done Building Project "C:\Users\Chuk Yih Jou\Desktop\OldGLProj\XOFEngine\common\common.vcxproj" (Rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.19

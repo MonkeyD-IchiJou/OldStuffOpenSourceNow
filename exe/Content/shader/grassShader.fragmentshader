@@ -1,0 +1,52 @@
+#version 420 core
+layout (location = 0) out vec4 gPosition;
+layout (location = 1) out vec4 gNormal;
+layout (location = 2) out vec4 gDiffuse;
+layout (location = 3) out vec3 gNormalView;  // for other post processing like ssao and ssr
+layout (location = 4) out vec4 gPositionView;  // for other post processing like ssao and ssr
+
+in GS_OUT
+{
+	smooth vec3 Normal;
+	smooth vec3 FragPos;
+	smooth vec3 NormalView;
+	smooth vec3 FragPosView;
+	smooth vec3 color;
+} fs_in;
+
+const float NEAR = 0.1; // projection matrix's near plane
+const float FAR = 1000.0; // projection matrix's far plane
+float LinearizeDepth(float depth)
+{
+    float z = depth * 2.0 - 1.0; // Back to NDC 
+    return (2.0 * NEAR * FAR) / (FAR + NEAR - z * (FAR - NEAR));	
+}
+
+void main()
+{
+	// secondly, settle the normal
+	vec3 normal = vec3(0, 0, 0);
+	normal = normalize(fs_in.Normal);
+
+	// diffuse
+	gDiffuse.rgb =fs_in.color;
+
+	// specular
+	gDiffuse.a = 1;
+
+	// Store the fragment position vector in the first gbuffer texture
+	gPosition.rgb = fs_in.FragPos;
+	gPosition.a = LinearizeDepth(gl_FragCoord.z);
+
+	gPositionView.rgb = fs_in.FragPosView;
+	gPositionView.a = gPosition.a;
+
+	// Also store the per-fragment normals into the gbuffer
+	gNormal.rgb = normalize(normal);
+	gNormalView = normalize(fs_in.NormalView);
+
+	// shininess
+	gNormal.a = 32.0;
+}
+
+

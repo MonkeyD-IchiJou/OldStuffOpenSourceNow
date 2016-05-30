@@ -1,0 +1,310 @@
+﻿Build started 5/31/2016 12:09:43 AM.
+     1>Project "C:\Users\Chuk Yih Jou\Desktop\OldGLProj\XOFEngine\XOFEngine\XOFEngine.vcxproj" on node 2 (Rebuild target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /I"C:\Users\Chuk Yih Jou\Desktop\OldGLProj\XOFEngine\\glew\include" /I"C:\Users\Chuk Yih Jou\Desktop\OldGLProj\XOFEngine\\glfw-3.1.2.bin.WIN64\include" /I"C:\Users\Chuk Yih Jou\Desktop\OldGLProj\XOFEngine\\common" /I"C:\Users\Chuk Yih Jou\Desktop\OldGLProj\XOFEngine\\assimp-3.1.1-win-binaries\include\assimp" /Zi /nologo /W3 /WX- /O2 /Oi /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Release\\" /Fd"x64\Release\vc120.pdb" /Gd /TP /errorReport:prompt AABB.cpp AxisLineMesh.cpp BasicMesh.cpp BulletC.cpp CameraC.cpp Canvas.cpp Character.cpp Collectable.cpp ColliderC.cpp commonShader.cpp Component.cpp ComponentsPool.cpp DebugMesh.cpp debugShader.cpp depthMapFBO.cpp depthShader.cpp DinoAIC.cpp DirLightC.cpp EllipsoidColliderC.cpp EntitiesPool.cpp Entity.cpp finalFBO.cpp FinalPassShader.cpp FontShader.cpp FontsLibrary.cpp FontType.cpp FXAAShader.cpp GameApplication.cpp GausianBlurShader.cpp gbuffer.cpp GeometryPassShader.cpp GLFW_Window.cpp gl_backend.cpp GraphicEngine.cpp GraphicScale.cpp GrassMesh.cpp GrassShader.cpp GUIrenderEngine.cpp GUIText.cpp LensFlareShader.cpp LightC.cpp LightShader.cpp Line.cpp LineMesh.cpp LineRendererC.cpp lua_backend.cpp main.cpp MatricesUBO.cpp Mesh.cpp MeshColliderC.cpp MeshRendererC.cpp MetaFile.cpp ModelLibrary.cpp MotionBlurShader.cpp NullShader.cpp pbuffer.cpp pingpongFBO.cpp PlayerManager.cpp PointLightC.cpp PostProcessPassShader.cpp RendererC.cpp Scene3D.cpp scenebase.cpp SceneManager.cpp ScriptC.cpp ShaderHeaven.cpp ShaderProgram.cpp SimpleShader.cpp skyboxbuffer.cpp SkyboxShader.cpp SphereColliderC.cpp SSAOBlurShader.cpp ssaobuffer.cpp SSAOShader.cpp TextMesh.cpp TextMeshCreator.cpp Texture.cpp TextureData.cpp TextureLibrary.cpp TransformationC.cpp TriggerC.cpp UBO.cpp Word.cpp World.cpp
+         AABB.cpp
+         AxisLineMesh.cpp
+     1>AxisLineMesh.cpp(58): warning C4267: '=' : conversion from 'size_t' to 'GLuint', possible loss of data
+         BasicMesh.cpp
+     1>BasicMesh.cpp(179): warning C4267: '=' : conversion from 'size_t' to 'GLuint', possible loss of data
+         BulletC.cpp
+         CameraC.cpp
+         Canvas.cpp
+         Character.cpp
+         Collectable.cpp
+         ColliderC.cpp
+         commonShader.cpp
+         Component.cpp
+         ComponentsPool.cpp
+     1>ComponentsPool.cpp(1209): warning C4800: 'uint32' : forcing value to bool 'true' or 'false' (performance warning)
+         DebugMesh.cpp
+     1>DebugMesh.cpp(82): warning C4267: 'argument' : conversion from 'size_t' to 'GLsizei', possible loss of data
+     1>DebugMesh.cpp(97): warning C4267: 'argument' : conversion from 'size_t' to 'GLsizei', possible loss of data
+     1>DebugMesh.cpp(201): warning C4267: '=' : conversion from 'size_t' to 'GLuint', possible loss of data
+         debugShader.cpp
+         depthMapFBO.cpp
+         depthShader.cpp
+         DinoAIC.cpp
+         DirLightC.cpp
+         EllipsoidColliderC.cpp
+         EntitiesPool.cpp
+         Compiling...
+         Entity.cpp
+     1>Entity.cpp(176): warning C4267: 'return' : conversion from 'size_t' to 'int', possible loss of data
+         finalFBO.cpp
+         FinalPassShader.cpp
+         FontShader.cpp
+         FontsLibrary.cpp
+         FontType.cpp
+         FXAAShader.cpp
+         GameApplication.cpp
+         GausianBlurShader.cpp
+         gbuffer.cpp
+         GeometryPassShader.cpp
+         GLFW_Window.cpp
+         gl_backend.cpp
+         GraphicEngine.cpp
+         GraphicScale.cpp
+         GrassMesh.cpp
+     1>GrassMesh.cpp(53): warning C4267: '=' : conversion from 'size_t' to 'GLuint', possible loss of data
+         GrassShader.cpp
+         GUIrenderEngine.cpp
+         GUIText.cpp
+         LensFlareShader.cpp
+         Compiling...
+         LightC.cpp
+         LightShader.cpp
+         Line.cpp
+         LineMesh.cpp
+         LineRendererC.cpp
+         lua_backend.cpp
+         main.cpp
+         MatricesUBO.cpp
+         Mesh.cpp
+         MeshColliderC.cpp
+         MeshRendererC.cpp
+         MetaFile.cpp
+         ModelLibrary.cpp
+         MotionBlurShader.cpp
+         NullShader.cpp
+         pbuffer.cpp
+         pingpongFBO.cpp
+         PlayerManager.cpp
+         PointLightC.cpp
+         PostProcessPassShader.cpp
+         Compiling...
+         RendererC.cpp
+         Scene3D.cpp
+         scenebase.cpp
+         SceneManager.cpp
+         ScriptC.cpp
+         ShaderHeaven.cpp
+         ShaderProgram.cpp
+         SimpleShader.cpp
+         skyboxbuffer.cpp
+         SkyboxShader.cpp
+         SphereColliderC.cpp
+         SSAOBlurShader.cpp
+         ssaobuffer.cpp
+         SSAOShader.cpp
+         TextMesh.cpp
+     1>TextMesh.cpp(23): warning C4267: 'return' : conversion from 'size_t' to 'unsigned int', possible loss of data
+         TextMeshCreator.cpp
+     1>TextMeshCreator.cpp(117): warning C4267: 'argument' : conversion from 'size_t' to 'const int', possible loss of data
+         Texture.cpp
+         TextureData.cpp
+         TextureLibrary.cpp
+         TransformationC.cpp
+         Compiling...
+         TriggerC.cpp
+         UBO.cpp
+         Word.cpp
+         World.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /I"C:\Users\Chuk Yih Jou\Desktop\OldGLProj\XOFEngine\\glew\include" /I"C:\Users\Chuk Yih Jou\Desktop\OldGLProj\XOFEngine\\glfw-3.1.2.bin.WIN64\include" /I"C:\Users\Chuk Yih Jou\Desktop\OldGLProj\XOFEngine\\common" /I"C:\Users\Chuk Yih Jou\Desktop\OldGLProj\XOFEngine\\assimp-3.1.1-win-binaries\include\assimp" /Zi /nologo /W3 /WX- /O2 /Oi /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Release\\" /Fd"x64\Release\vc120.pdb" /Gd /TC /errorReport:prompt lua\lapi.c lua\lauxlib.c lua\lbaselib.c lua\lbitlib.c lua\lcode.c lua\lcorolib.c lua\lctype.c lua\ldblib.c lua\ldebug.c lua\ldo.c lua\ldump.c lua\lfunc.c lua\lgc.c lua\linit.c lua\liolib.c lua\llex.c lua\lmathlib.c lua\lmem.c lua\loadlib.c lua\lobject.c lua\lopcodes.c lua\loslib.c lua\lparser.c lua\lstate.c lua\lstring.c lua\lstrlib.c lua\ltable.c lua\ltablib.c lua\ltm.c lua\lundump.c lua\lutf8lib.c lua\lvm.c lua\lzio.c
+         lapi.c
+         lauxlib.c
+         lbaselib.c
+         lbitlib.c
+         lcode.c
+         lcorolib.c
+         lctype.c
+         ldblib.c
+         ldebug.c
+         ldo.c
+         ldump.c
+         lfunc.c
+         lgc.c
+         linit.c
+         liolib.c
+         llex.c
+         lmathlib.c
+         lmem.c
+         loadlib.c
+         lobject.c
+         Compiling...
+         lopcodes.c
+         loslib.c
+         lparser.c
+         lstate.c
+         lstring.c
+         lstrlib.c
+         ltable.c
+         ltablib.c
+         ltm.c
+         lundump.c
+         lutf8lib.c
+         lvm.c
+         lzio.c
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Chuk Yih Jou\Desktop\OldGLProj\XOFEngine\x64\Release\XOFEngine.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\Users\Chuk Yih Jou\Desktop\OldGLProj\XOFEngine\\glew\lib\Release\x64" /LIBPATH:"C:\Users\Chuk Yih Jou\Desktop\OldGLProj\XOFEngine\\glfw-3.1.2.bin.WIN64\lib-vc2013" /LIBPATH:"C:\Users\Chuk Yih Jou\Desktop\OldGLProj\XOFEngine\\assimp-3.1.1-win-binaries\lib64" /LIBPATH:"C:\Users\Chuk Yih Jou\Desktop\OldGLProj\XOFEngine\Release" glew32.lib glfw3.lib opengl32.lib winmm.lib assimp.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Chuk Yih Jou\Desktop\OldGLProj\XOFEngine\x64\Release\XOFEngine.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Chuk Yih Jou\Desktop\OldGLProj\XOFEngine\x64\Release\XOFEngine.lib" /MACHINE:X64 x64\Release\AABB.obj
+         x64\Release\AxisLineMesh.obj
+         x64\Release\BasicMesh.obj
+         x64\Release\BulletC.obj
+         x64\Release\CameraC.obj
+         x64\Release\Canvas.obj
+         x64\Release\Character.obj
+         x64\Release\Collectable.obj
+         x64\Release\ColliderC.obj
+         x64\Release\commonShader.obj
+         x64\Release\Component.obj
+         x64\Release\ComponentsPool.obj
+         x64\Release\DebugMesh.obj
+         x64\Release\debugShader.obj
+         x64\Release\depthMapFBO.obj
+         x64\Release\depthShader.obj
+         x64\Release\DinoAIC.obj
+         x64\Release\DirLightC.obj
+         x64\Release\EllipsoidColliderC.obj
+         x64\Release\EntitiesPool.obj
+         x64\Release\Entity.obj
+         x64\Release\finalFBO.obj
+         x64\Release\FinalPassShader.obj
+         x64\Release\FontShader.obj
+         x64\Release\FontsLibrary.obj
+         x64\Release\FontType.obj
+         x64\Release\FXAAShader.obj
+         x64\Release\GameApplication.obj
+         x64\Release\GausianBlurShader.obj
+         x64\Release\gbuffer.obj
+         x64\Release\GeometryPassShader.obj
+         x64\Release\GLFW_Window.obj
+         x64\Release\gl_backend.obj
+         x64\Release\GraphicEngine.obj
+         x64\Release\GraphicScale.obj
+         x64\Release\GrassMesh.obj
+         x64\Release\GrassShader.obj
+         x64\Release\GUIrenderEngine.obj
+         x64\Release\GUIText.obj
+         x64\Release\LensFlareShader.obj
+         x64\Release\LightC.obj
+         x64\Release\LightShader.obj
+         x64\Release\Line.obj
+         x64\Release\LineMesh.obj
+         x64\Release\LineRendererC.obj
+         x64\Release\lapi.obj
+         x64\Release\lauxlib.obj
+         x64\Release\lbaselib.obj
+         x64\Release\lbitlib.obj
+         x64\Release\lcode.obj
+         x64\Release\lcorolib.obj
+         x64\Release\lctype.obj
+         x64\Release\ldblib.obj
+         x64\Release\ldebug.obj
+         x64\Release\ldo.obj
+         x64\Release\ldump.obj
+         x64\Release\lfunc.obj
+         x64\Release\lgc.obj
+         x64\Release\linit.obj
+         x64\Release\liolib.obj
+         x64\Release\llex.obj
+         x64\Release\lmathlib.obj
+         x64\Release\lmem.obj
+         x64\Release\loadlib.obj
+         x64\Release\lobject.obj
+         x64\Release\lopcodes.obj
+         x64\Release\loslib.obj
+         x64\Release\lparser.obj
+         x64\Release\lstate.obj
+         x64\Release\lstring.obj
+         x64\Release\lstrlib.obj
+         x64\Release\ltable.obj
+         x64\Release\ltablib.obj
+         x64\Release\ltm.obj
+         x64\Release\lundump.obj
+         x64\Release\lutf8lib.obj
+         x64\Release\lvm.obj
+         x64\Release\lzio.obj
+         x64\Release\lua_backend.obj
+         x64\Release\main.obj
+         x64\Release\MatricesUBO.obj
+         x64\Release\Mesh.obj
+         x64\Release\MeshColliderC.obj
+         x64\Release\MeshRendererC.obj
+         x64\Release\MetaFile.obj
+         x64\Release\ModelLibrary.obj
+         x64\Release\MotionBlurShader.obj
+         x64\Release\NullShader.obj
+         x64\Release\pbuffer.obj
+         x64\Release\pingpongFBO.obj
+         x64\Release\PlayerManager.obj
+         x64\Release\PointLightC.obj
+         x64\Release\PostProcessPassShader.obj
+         x64\Release\RendererC.obj
+         x64\Release\Scene3D.obj
+         x64\Release\scenebase.obj
+         x64\Release\SceneManager.obj
+         x64\Release\ScriptC.obj
+         x64\Release\ShaderHeaven.obj
+         x64\Release\ShaderProgram.obj
+         x64\Release\SimpleShader.obj
+         x64\Release\skyboxbuffer.obj
+         x64\Release\SkyboxShader.obj
+         x64\Release\SphereColliderC.obj
+         x64\Release\SSAOBlurShader.obj
+         x64\Release\ssaobuffer.obj
+         x64\Release\SSAOShader.obj
+         x64\Release\TextMesh.obj
+         x64\Release\TextMeshCreator.obj
+         x64\Release\Texture.obj
+         x64\Release\TextureData.obj
+         x64\Release\TextureLibrary.obj
+         x64\Release\TransformationC.obj
+         x64\Release\TriggerC.obj
+         x64\Release\UBO.obj
+         x64\Release\Word.obj
+         x64\Release\World.obj
+     1>CameraC.obj : error LNK2001: unresolved external symbol "public: __cdecl Math::CFrustum::~CFrustum(void)" (??1CFrustum@Math@@QEAA@XZ)
+     1>CameraC.obj : error LNK2001: unresolved external symbol "public: void __cdecl Math::CFrustum::setVP(class Math::mat4<float> const &)" (?setVP@CFrustum@Math@@QEAAXAEBV?$mat4@M@2@@Z)
+     1>CameraC.obj : error LNK2001: unresolved external symbol "public: __cdecl Math::CFrustum::CFrustum(void)" (??0CFrustum@Math@@QEAA@XZ)
+     1>CameraC.obj : error LNK2001: unresolved external symbol "public: class Math::vec3<float> const __cdecl Math::Quaternion::operator*(class Math::vec3<float> const &)const " (??DQuaternion@Math@@QEBA?BV?$vec3@M@1@AEBV21@@Z)
+     1>CameraC.obj : error LNK2001: unresolved external symbol "public: __cdecl Math::Quaternion::~Quaternion(void)" (??1Quaternion@Math@@QEAA@XZ)
+     1>CameraC.obj : error LNK2001: unresolved external symbol "public: __cdecl Math::Quaternion::Quaternion(float,class Math::vec3<float> const &)" (??0Quaternion@Math@@QEAA@MAEBV?$vec3@M@1@@Z)
+     1>CameraC.obj : error LNK2001: unresolved external symbol "private: static class pp::Mouse * pp::Mouse::s_instance" (?s_instance@Mouse@pp@@0PEAV12@EA)
+     1>CameraC.obj : error LNK2001: unresolved external symbol "private: __cdecl pp::Mouse::Mouse(void)" (??0Mouse@pp@@AEAA@XZ)
+     1>CameraC.obj : error LNK2001: unresolved external symbol "public: float __cdecl pp::Mouse::getYaw(void)const " (?getYaw@Mouse@pp@@QEBAMXZ)
+     1>CameraC.obj : error LNK2001: unresolved external symbol "public: float __cdecl pp::Mouse::getPitch(void)const " (?getPitch@Mouse@pp@@QEBAMXZ)
+     1>ComponentsPool.obj : error LNK2001: unresolved external symbol "public: double __cdecl PLANE::signedDistanceTo(class Math::vec3<float> const &)const " (?signedDistanceTo@PLANE@@QEBANAEBV?$vec3@M@Math@@@Z)
+     1>ComponentsPool.obj : error LNK2001: unresolved external symbol "public: bool __cdecl PLANE::isFrontFacingTo(class Math::vec3<float> const &)const " (?isFrontFacingTo@PLANE@@QEBA_NAEBV?$vec3@M@Math@@@Z)
+     1>ComponentsPool.obj : error LNK2001: unresolved external symbol "public: __cdecl PLANE::PLANE(class Math::vec3<float> const &,class Math::vec3<float> const &)" (??0PLANE@@QEAA@AEBV?$vec3@M@Math@@0@Z)
+     1>ComponentsPool.obj : error LNK2001: unresolved external symbol "public: __cdecl PLANE::PLANE(class Math::vec3<float> const &,class Math::vec3<float> const &,class Math::vec3<float> const &)" (??0PLANE@@QEAA@AEBV?$vec3@M@Math@@00@Z)
+     1>GameApplication.obj : error LNK2001: unresolved external symbol "private: static class pp::Keyboard * pp::Keyboard::s_instance" (?s_instance@Keyboard@pp@@0PEAV12@EA)
+     1>GameApplication.obj : error LNK2001: unresolved external symbol "private: __cdecl pp::Keyboard::Keyboard(void)" (??0Keyboard@pp@@AEAA@XZ)
+     1>GameApplication.obj : error LNK2001: unresolved external symbol "public: void __cdecl pp::Keyboard::resetAllKeys(void)" (?resetAllKeys@Keyboard@pp@@QEAAXXZ)
+     1>GameApplication.obj : error LNK2001: unresolved external symbol "public: void __cdecl pp::Mouse::resetALLKeysStates(void)" (?resetALLKeysStates@Mouse@pp@@QEAAXXZ)
+     1>PlayerManager.obj : error LNK2001: unresolved external symbol "public: bool __cdecl Math::CFrustum::SphereIntersection(class Math::vec3<float> const &,float const &)" (?SphereIntersection@CFrustum@Math@@QEAA_NAEBV?$vec3@M@2@AEBM@Z)
+     1>SceneManager.obj : error LNK2001: unresolved external symbol "public: void __cdecl pp::Keyboard::updateKey(enum KEY const &,enum KEY_STATE const &)" (?updateKey@Keyboard@pp@@QEAAXAEBW4KEY@@AEBW4KEY_STATE@@@Z)
+     1>SceneManager.obj : error LNK2001: unresolved external symbol "public: void __cdecl pp::App::TimerShldWait(void)" (?TimerShldWait@App@pp@@QEAAXXZ)
+     1>SceneManager.obj : error LNK2001: unresolved external symbol "public: void __cdecl pp::App::startTimer(void)" (?startTimer@App@pp@@QEAAXXZ)
+     1>SceneManager.obj : error LNK2001: unresolved external symbol "public: void __cdecl pp::App::calcFPS(void)" (?calcFPS@App@pp@@QEAAXXZ)
+     1>SceneManager.obj : error LNK2001: unresolved external symbol "public: virtual __cdecl pp::App::~App(void)" (??1App@pp@@UEAA@XZ)
+     1>SceneManager.obj : error LNK2001: unresolved external symbol "public: __cdecl pp::App::App(void)" (??0App@pp@@QEAA@XZ)
+     1>SceneManager.obj : error LNK2001: unresolved external symbol "public: void __cdecl pp::Mouse::resetKeyPressed(void)" (?resetKeyPressed@Mouse@pp@@QEAAXXZ)
+     1>SceneManager.obj : error LNK2001: unresolved external symbol "public: void __cdecl pp::Mouse::updateKeyPressed(enum MOUSE const &,enum KEY_STATE const &)" (?updateKeyPressed@Mouse@pp@@QEAAXAEBW4MOUSE@@AEBW4KEY_STATE@@@Z)
+     1>SceneManager.obj : error LNK2001: unresolved external symbol "public: void __cdecl pp::Mouse::setInBound(bool const &)" (?setInBound@Mouse@pp@@QEAAXAEB_N@Z)
+     1>SceneManager.obj : error LNK2001: unresolved external symbol "public: void __cdecl pp::Mouse::updateMouseCursorFontSpace(float const &,float const &,float const &)" (?updateMouseCursorFontSpace@Mouse@pp@@QEAAXAEBM00@Z)
+     1>SceneManager.obj : error LNK2001: unresolved external symbol "public: void __cdecl pp::Mouse::updatePitchAndYaw(float const &)" (?updatePitchAndYaw@Mouse@pp@@QEAAXAEBM@Z)
+     1>SceneManager.obj : error LNK2001: unresolved external symbol "public: void __cdecl pp::Mouse::setScrolling(float const &)" (?setScrolling@Mouse@pp@@QEAAXAEBM@Z)
+     1>SceneManager.obj : error LNK2001: unresolved external symbol "public: void __cdecl pp::Mouse::setMousePos(float const &,float const &)" (?setMousePos@Mouse@pp@@QEAAXAEBM0@Z)
+     1>ScriptC.obj : error LNK2001: unresolved external symbol "public: void __cdecl Math::Quaternion::setup(float,class Math::vec3<float> const &)" (?setup@Quaternion@Math@@QEAAXMAEBV?$vec3@M@2@@Z)
+     1>ScriptC.obj : error LNK2001: unresolved external symbol "public: bool __cdecl pp::Keyboard::isKeyPressed(enum KEY const &)" (?isKeyPressed@Keyboard@pp@@QEAA_NAEBW4KEY@@@Z)
+     1>ScriptC.obj : error LNK2001: unresolved external symbol "public: bool __cdecl pp::Keyboard::isKeyHold(enum KEY const &)" (?isKeyHold@Keyboard@pp@@QEAA_NAEBW4KEY@@@Z)
+     1>ScriptC.obj : error LNK2001: unresolved external symbol "public: bool __cdecl pp::Keyboard::isKeyTouched(enum KEY const &)" (?isKeyTouched@Keyboard@pp@@QEAA_NAEBW4KEY@@@Z)
+     1>ScriptC.obj : error LNK2001: unresolved external symbol "public: bool __cdecl pp::Mouse::isHold(enum MOUSE const &)" (?isHold@Mouse@pp@@QEAA_NAEBW4MOUSE@@@Z)
+     1>ScriptC.obj : error LNK2001: unresolved external symbol "public: bool __cdecl pp::Mouse::isClick(enum MOUSE const &)" (?isClick@Mouse@pp@@QEAA_NAEBW4MOUSE@@@Z)
+     1>ScriptC.obj : error LNK2001: unresolved external symbol "public: float __cdecl pp::Mouse::getScrolling(void)const " (?getScrolling@Mouse@pp@@QEBAMXZ)
+     1>TransformationC.obj : error LNK2001: unresolved external symbol "public: void __cdecl Math::MS::QuaternionRotate(float const &,class Math::vec3<float> const &)" (?QuaternionRotate@MS@Math@@QEAAXAEBMAEBV?$vec3@M@2@@Z)
+     1>TransformationC.obj : error LNK2001: unresolved external symbol "public: void __cdecl Math::MS::LoadIdentity(void)" (?LoadIdentity@MS@Math@@QEAAXXZ)
+     1>TransformationC.obj : error LNK2001: unresolved external symbol "public: void __cdecl Math::MS::Clear(void)" (?Clear@MS@Math@@QEAAXXZ)
+     1>TransformationC.obj : error LNK2001: unresolved external symbol "public: void __cdecl Math::MS::PushMatrix(void)" (?PushMatrix@MS@Math@@QEAAXXZ)
+     1>TransformationC.obj : error LNK2001: unresolved external symbol "public: class Math::mat4<float> const & __cdecl Math::MS::Top(void)const " (?Top@MS@Math@@QEBAAEBV?$mat4@M@2@XZ)
+     1>TransformationC.obj : error LNK2001: unresolved external symbol "public: __cdecl Math::MS::~MS(void)" (??1MS@Math@@QEAA@XZ)
+     1>TransformationC.obj : error LNK2001: unresolved external symbol "public: __cdecl Math::MS::MS(void)" (??0MS@Math@@QEAA@XZ)
+     1>TransformationC.obj : error LNK2001: unresolved external symbol "public: class Math::mat4<float> __cdecl Math::Quaternion::convertTomat4(void)" (?convertTomat4@Quaternion@Math@@QEAA?AV?$mat4@M@2@XZ)
+     1>TransformationC.obj : error LNK2001: unresolved external symbol "public: class Math::Quaternion const __cdecl Math::Quaternion::operator*(class Math::Quaternion const &)const " (??DQuaternion@Math@@QEBA?BV01@AEBV01@@Z)
+     1>TransformationC.obj : error LNK2001: unresolved external symbol "public: __cdecl Math::Quaternion::Quaternion(void)" (??0Quaternion@Math@@QEAA@XZ)
+     1>C:\Users\Chuk Yih Jou\Desktop\OldGLProj\XOFEngine\x64\Release\XOFEngine.exe : fatal error LNK1120: 49 unresolved externals
+     1>Done Building Project "C:\Users\Chuk Yih Jou\Desktop\OldGLProj\XOFEngine\XOFEngine\XOFEngine.vcxproj" (Rebuild target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:24.46

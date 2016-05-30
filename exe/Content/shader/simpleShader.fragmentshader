@@ -1,0 +1,18 @@
+#version 420 core
+out vec4 color;
+
+noperspective in vec2 vTexcoord;
+uniform sampler2D tex;
+
+void main()
+{
+	vec3 result = texture(tex, vTexcoord).rgb;
+
+	const float gamma = 2.2;
+    // Gamma correction 
+    result = pow(result, vec3(1.0 / gamma));
+    color = vec4(result, 1.0);
+
+}
+
+

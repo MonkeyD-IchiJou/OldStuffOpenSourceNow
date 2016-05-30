@@ -1,0 +1,85 @@
+# This file uses centimeters as units for non-parametric coordinates.
+
+mtllib dinoTailHornsBIG.mtl
+g dragontailparts:default2
+v -0.000413 1.506064 -2.132622
+v -0.388667 1.587824 -1.826703
+v -0.000413 1.669585 -1.520784
+v 0.387839 1.587824 -1.826703
+v -0.000413 2.125056 -1.943470
+v -0.002874 1.615625 -1.507892
+v -0.470081 1.710412 -1.158755
+v -0.002874 1.805200 -0.809618
+v 0.464333 1.710412 -1.158755
+v -0.002874 2.552337 -1.344643
+vt 0.500000 0.000000
+vt 0.750000 0.250000
+vt 0.250000 0.250000
+vt 0.500000 0.500000
+vt 0.250000 0.500000
+vt 0.375000 0.500000
+vt 0.500000 1.000000
+vt 0.500000 0.500000
+vt 0.625000 0.500000
+vt 0.750000 0.500000
+vt 0.500000 0.000000
+vt 0.750000 0.250000
+vt 0.250000 0.250000
+vt 0.500000 0.500000
+vt 0.250000 0.500000
+vt 0.375000 0.500000
+vt 0.500000 1.000000
+vt 0.500000 0.500000
+vt 0.625000 0.500000
+vt 0.750000 0.500000
+vn 0.000000 -0.966092 0.258199
+vn 0.000000 -0.966092 0.258199
+vn 0.000000 -0.966092 0.258199
+vn 0.000000 -0.966092 0.258199
+vn 0.000000 -0.966092 0.258199
+vn 0.000000 -0.966092 0.258199
+vn -0.569038 0.240312 -0.786413
+vn -0.569039 0.240311 -0.786413
+vn -0.569039 0.240311 -0.786413
+vn -0.584734 0.551823 0.594624
+vn -0.584734 0.551823 0.594624
+vn -0.584734 0.551823 0.594624
+vn 0.584734 0.551822 0.594624
+vn 0.584734 0.551822 0.594624
+vn 0.584734 0.551822 0.594624
+vn 0.569039 0.240311 -0.786413
+vn 0.569039 0.240311 -0.786413
+vn 0.569039 0.240311 -0.786413
+vn 0.000000 -0.965066 0.262007
+vn 0.000000 -0.965066 0.262007
+vn 0.000000 -0.965066 0.262007
+vn 0.000000 -0.965066 0.262007
+vn 0.000000 -0.965066 0.262007
+vn 0.000000 -0.965066 0.262007
+vn -0.574207 0.140566 -0.806553
+vn -0.574207 0.140566 -0.806553
+vn -0.574207 0.140566 -0.806553
+vn -0.587333 0.471214 0.658025
+vn -0.587333 0.471214 0.658025
+vn -0.587333 0.471214 0.658025
+vn 0.587333 0.471214 0.658025
+vn 0.587333 0.471214 0.658025
+vn 0.587333 0.471214 0.658025
+vn 0.574207 0.140566 -0.806553
+vn 0.574207 0.140566 -0.806553
+vn 0.574207 0.140566 -0.806553
+s off
+g dragontailparts:initialShadingGroup9 dragontailparts:initialShadingGroup10 dragontailparts:initialShadingGroup11 dragontailparts:initialShadingGroup12 dragontailparts:initialShadingGroup13 dragontailparts:initialShadingGroup14 dragontailparts:initialShadingGroup15 dragontailparts:pPyramid3 dragontailparts:polySurface7 dragontailparts:polySurface11 dragontailparts:polySurface15 dragontailparts:polySurface18 dragontailparts:polySurface25 dragontailparts:polySurface26 dragontailparts:polySurface27 dragontailparts:polySurface28 dragontailparts:polySurface30 dragontailparts:polySurface31 dragontailparts:polySurface32 initialShadingGroup polySurface97
+f 1/1/1 4/2/2 2/3/3
+f 2/3/4 4/2/5 3/4/6
+f 1/5/7 2/6/8 5/7/9
+f 2/6/10 3/8/11 5/7/12
+f 3/8/13 4/9/14 5/7/15
+f 4/9/16 1/10/17 5/7/18
+g dragontailparts:initialShadingGroup9 dragontailparts:initialShadingGroup10 dragontailparts:initialShadingGroup11 dragontailparts:initialShadingGroup12 dragontailparts:initialShadingGroup13 dragontailparts:initialShadingGroup14 dragontailparts:initialShadingGroup15 dragontailparts:pPyramid3 dragontailparts:polySurface5 dragontailparts:polySurface9 dragontailparts:polySurface13 dragontailparts:polySurface17 dragontailparts:polySurface18 dragontailparts:polySurface25 dragontailparts:polySurface26 dragontailparts:polySurface27 dragontailparts:polySurface28 dragontailparts:polySurface29 dragontailparts:polySurface30 initialShadingGroup polySurface97
+f 6/11/19 9/12/20 7/13/21
+f 7/13/22 9/12/23 8/14/24
+f 6/15/25 7/16/26 10/17/27
+f 7/16/28 8/18/29 10/17/30
+f 8/18/31 9/19/32 10/17/33
+f 9/19/34 6/20/35 10/17/36

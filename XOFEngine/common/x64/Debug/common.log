@@ -1,0 +1,32 @@
+﻿Build started 4/22/2016 1:20:39 AM.
+     1>Project "C:\Users\Chuk Yih Jou\Desktop\SP1_framework\XOFEngine\common\common.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /Od /D WIN32 /D _DEBUG /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /Gd /TP /errorReport:prompt App.cpp Attenuation.cpp AttenuationFormula.cpp Frustum.cpp Keyboard.cpp MatrixStack.cpp Mouse.cpp quat4.cpp TESTPLANE.cpp timer.cpp
+         timer.cpp
+         TESTPLANE.cpp
+         quat4.cpp
+         Mouse.cpp
+         MatrixStack.cpp
+         Keyboard.cpp
+         Frustum.cpp
+         AttenuationFormula.cpp
+         Attenuation.cpp
+         App.cpp
+         Generating Code...
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\Lib.exe /OUT:"C:\Users\Chuk Yih Jou\Desktop\SP1_framework\XOFEngine\x64\Debug\common.lib" /NOLOGO /MACHINE:X64 x64\Debug\App.obj
+         x64\Debug\Attenuation.obj
+         x64\Debug\AttenuationFormula.obj
+         x64\Debug\Frustum.obj
+         x64\Debug\Keyboard.obj
+         x64\Debug\MatrixStack.obj
+         x64\Debug\Mouse.obj
+         x64\Debug\quat4.obj
+         x64\Debug\TESTPLANE.obj
+         x64\Debug\timer.obj
+         common.vcxproj -> C:\Users\Chuk Yih Jou\Desktop\SP1_framework\XOFEngine\x64\Debug\common.lib
+     1>Done Building Project "C:\Users\Chuk Yih Jou\Desktop\SP1_framework\XOFEngine\common\common.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.11

@@ -1,0 +1,154 @@
+#version 420 core
+
+out vec3 FragColor;
+
+struct PointLight
+{
+	vec3 position;
+	vec3 color;
+
+    vec3 diffuse;  // light color is this one
+    vec3 specular; 
+};
+
+struct DirLight
+{
+	vec3 direction;
+	vec3 color;
+
+    vec3 ambient;
+    vec3 diffuse;
+    vec3 specular;
+};
+
+uniform vec3 viewPos;
+uniform int ssaoEnable;
+
+uniform sampler2D gPosition;
+uniform sampler2D gNormal;
+uniform sampler2D gDiffuse;
+uniform sampler2D ssao; // ssao take in
+
+uniform sampler2D skybox;
+
+uniform DirLight dirlight;
+uniform PointLight pointlight;
+
+uniform vec2 screensize;
+
+flat in int type;
+
+vec3 ambientCalc(vec3 lightAmbient, vec3 lightColor, float ambientO);
+vec3 diffuseCalc(vec3 lightDiff, float n_dot_l, vec3 lightColor);
+vec3 specularCalc(vec3 lightSpecular, vec4 normal, vec3 lightDir, vec3 viewDir, vec3 specularColor, vec3 lightColor, float n_dot_l);
+
+vec2 CalcTexCoord()
+{
+    return gl_FragCoord.xy / screensize;
+}
+
+void main(void)
+{
+	// Init stage for lighting pass
+	// from here ------
+
+	vec2 texcoord = CalcTexCoord();
+
+	vec4 normal = texture(gNormal, texcoord);
+
+	vec4 diffuseTexColor = texture(gDiffuse, texcoord);
+
+	vec3 specularColor = vec3(1, 1, 1); // specular is always white
+
+	vec4 FragPos = texture(gPosition, texcoord);
+	
+	vec3 viewDir =  normalize(viewPos - FragPos.rgb);	
+
+	FragColor = vec3(0.0);
+	// till here -----
+
+
+	
+	// for pointlight
+	if(type == 1)
+	{
+		vec3 lightpos = pointlight.position;
+		vec3 lightcolor = pointlight.color;
+		vec3 lightdiffuse = pointlight.diffuse;
+		vec3 lightspecular = pointlight.specular;
+
+		vec3 ld = lightpos - FragPos.rgb;
+		vec3 lightDir = normalize(ld);
+		float n_dot_l = max( dot(lightDir, normal.rgb ), 0.0);
+
+		vec3 diffuse = diffuseCalc(lightdiffuse, n_dot_l, lightcolor);
+		vec3 specular = specularCalc(lightspecular, normal, lightDir, viewDir, specularColor.rgb, lightcolor, n_dot_l);
+
+		// Attenuation
+		float distance    = length(ld);
+		float attenuation = 1.0 / (1.0 +  0.35 * distance + 
+    		    0.44 * (distance * distance ));  
+
+		diffuse  *= attenuation;
+		specular *= attenuation;
+
+		// final output
+		FragColor = diffuseTexColor.rgb *  (( diffuse + specular) );
+	}
+
+	// for dirlight
+	else
+	{
+		vec3 emmisiveColor = vec3(0);
+		if(diffuseTexColor.a > 0) // emissive number store in the alpha of diffusetexcolor
+		{
+			emmisiveColor = diffuseTexColor.rgb; 
+		}
+
+		float ambientO = 1.0;
+		if(ssaoEnable == 1)
+		{
+			ambientO = texture(ssao, texcoord).r;
+		}
+
+		vec3 lightcolor = dirlight.color;
+		vec3 lightambient = dirlight.ambient;
+		vec3 lightdiffuse = dirlight.diffuse;
+		vec3 lightspecular = dirlight.specular;
+
+		vec3 lightDir = normalize(-dirlight.direction);	
+		float n_dot_l = max( dot(lightDir, normal.rgb ), 0.0);
+
+		vec3 ambient = ambientCalc(lightambient, lightcolor, ambientO);
+		vec3 diffuse = diffuseCalc(lightdiffuse, n_dot_l, lightcolor);
+		vec3 specular = specularCalc(lightspecular, normal, lightDir, viewDir, specularColor.rgb, lightcolor, n_dot_l);
+
+		// final output
+		FragColor = diffuseTexColor.rgb * ( (ambient + emmisiveColor) +  (1.0 - FragPos.a) * ( diffuse + specular) ) ;
+		FragColor += texture(skybox, texcoord).rgb; // skybox add baby
+	}
+}
+
+
+vec3 ambientCalc(vec3 lightAmbient, vec3 lightColor, float ambientO)
+{
+	return dirlight.ambient * dirlight.color * ambientO;
+}
+
+
+vec3 diffuseCalc(vec3 lightDiff, float n_dot_l, vec3 lightColor)
+{
+	return lightDiff *  n_dot_l *  lightColor;
+}
+
+
+vec3 specularCalc(vec3 lightSpecular, vec4 normal, vec3 lightDir, vec3 viewDir, vec3 specularColor, vec3 lightColor, float n_dot_l)
+{
+	vec3 specular = vec3(0.0);
+	if(n_dot_l > 0.0)
+	{
+		specular = (lightSpecular * ( pow( max(dot(normal.rgb, normalize(lightDir + viewDir)), 0.0), normal.a) * specularColor) * lightColor);
+	}
+
+	return specular;
+}

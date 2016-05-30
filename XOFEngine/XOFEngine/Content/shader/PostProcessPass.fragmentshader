@@ -1,0 +1,18 @@
+#version 420 core
+layout (location = 0) out vec4 pBrightness;
+layout (location = 1) out vec4 pLowRes;
+
+uniform float uScale;
+uniform float uBias;
+uniform sampler2D texUnit; // final texture from gbuffer
+
+noperspective in vec2 vTexcoord;
+
+void main()
+{
+	vec2 texc = vTexcoord;
+
+	pLowRes = texture(texUnit, vTexcoord);
+	pBrightness = max(vec4(0.0), pLowRes + uBias) * uScale ;
+}
+

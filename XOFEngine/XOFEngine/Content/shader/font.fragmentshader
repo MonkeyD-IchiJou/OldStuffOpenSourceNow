@@ -1,0 +1,33 @@
+#version 420 core
+
+in vec2 pass_textureCoords;
+
+out vec4 out_color;
+
+uniform vec3 color;
+uniform sampler2D fontAtlas;
+
+uniform float width;
+uniform float edge;
+uniform float borderwidth;
+uniform float borderedge;
+uniform vec2 offset; // for shadow effect
+uniform vec3 outlineColor;
+uniform float alphaU;
+
+void main(void)
+{
+	float distance = 1.0 - texture(fontAtlas, pass_textureCoords).a;
+	float alpha = 1.0 - smoothstep(width, width + edge, distance);
+
+	float distance2 = 1.0 - texture(fontAtlas, pass_textureCoords + offset).a;
+	float outlineAlpha = 1.0 - smoothstep(borderwidth, borderwidth + borderedge, distance2);
+
+	float overallAlpha = alpha + ( 1.0 - alpha ) * outlineAlpha;
+	vec3 overallcolor = mix(outlineColor, color, alpha / overallAlpha);
+
+	vec4 finalColor = vec4(overallcolor, overallAlpha - alphaU);
+	vec3 mapped = vec3(1.0) - exp(-finalColor.xyz * 2.0); // at night is 0.5 .. else 1.75
+
+	out_color = vec4(mapped, finalColor.a);
+}

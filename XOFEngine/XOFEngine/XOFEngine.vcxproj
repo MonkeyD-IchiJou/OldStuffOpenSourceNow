@@ -1,0 +1,421 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{AA795C92-A29E-4996-87F7-772B25B90B46}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>XOFEngine</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)\glew\include;$(SolutionDir)\glfw\include;$(SolutionDir)\common;$(SolutionDir)\Assimp\include\assimp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)\glew\lib\Release\Win32;$(SolutionDir)\glfw\lib-vc2013;$(SolutionDir)\Assimp\lib32;$(SolutionDir)$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glew32.lib;glfw3.lib;opengl32.lib;winmm.lib;common.lib;assimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)\glew\include;$(SolutionDir)\glfw-3.1.2.bin.WIN64\include;$(SolutionDir)\common;$(SolutionDir)\assimp-3.1.1-win-binaries\include\assimp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CompileAsManaged>false</CompileAsManaged>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)\glew\lib\Release\x64;$(SolutionDir)\glfw-3.1.2.bin.WIN64\lib-vc2013;$(SolutionDir)\assimp-3.1.1-win-binaries\lib64;$(SolutionDir)$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glew32.lib;glfw3.lib;opengl32.lib;winmm.lib;assimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)\glew\include;$(SolutionDir)\glfw\include;$(SolutionDir)\common;$(SolutionDir)\Assimp\include\assimp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(SolutionDir)\glew\lib\Release\Win32;$(SolutionDir)\glfw\lib-vc2013;$(SolutionDir)\Assimp\lib32;$(SolutionDir)$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glew32.lib;glfw3.lib;opengl32.lib;winmm.lib;common.lib;assimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)\glew\include;$(SolutionDir)\glfw-3.1.2.bin.WIN64\include;$(SolutionDir)\common;$(SolutionDir)\assimp-3.1.1-win-binaries\include\assimp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CompileAsManaged>false</CompileAsManaged>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(SolutionDir)\glew\lib\Release\x64;$(SolutionDir)\glfw-3.1.2.bin.WIN64\lib-vc2013;$(SolutionDir)\assimp-3.1.1-win-binaries\lib64;$(SolutionDir)$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glew32.lib;glfw3.lib;opengl32.lib;winmm.lib;assimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AABB.cpp" />
+    <ClCompile Include="AxisLineMesh.cpp" />
+    <ClCompile Include="BasicMesh.cpp" />
+    <ClCompile Include="BulletC.cpp" />
+    <ClCompile Include="CameraC.cpp" />
+    <ClCompile Include="Canvas.cpp" />
+    <ClCompile Include="Character.cpp" />
+    <ClCompile Include="Collectable.cpp" />
+    <ClCompile Include="ColliderC.cpp" />
+    <ClCompile Include="commonShader.cpp" />
+    <ClCompile Include="Component.cpp" />
+    <ClCompile Include="ComponentsPool.cpp" />
+    <ClCompile Include="DebugMesh.cpp" />
+    <ClCompile Include="debugShader.cpp" />
+    <ClCompile Include="depthMapFBO.cpp" />
+    <ClCompile Include="depthShader.cpp" />
+    <ClCompile Include="DinoAIC.cpp" />
+    <ClCompile Include="DirLightC.cpp" />
+    <ClCompile Include="EllipsoidColliderC.cpp" />
+    <ClCompile Include="EntitiesPool.cpp" />
+    <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="finalFBO.cpp" />
+    <ClCompile Include="FinalPassShader.cpp" />
+    <ClCompile Include="FontShader.cpp" />
+    <ClCompile Include="FontsLibrary.cpp" />
+    <ClCompile Include="FontType.cpp" />
+    <ClCompile Include="FXAAShader.cpp" />
+    <ClCompile Include="GameApplication.cpp" />
+    <ClCompile Include="GausianBlurShader.cpp" />
+    <ClCompile Include="gbuffer.cpp" />
+    <ClCompile Include="GeometryPassShader.cpp" />
+    <ClCompile Include="GLFW_Window.cpp" />
+    <ClCompile Include="gl_backend.cpp" />
+    <ClCompile Include="GraphicEngine.cpp" />
+    <ClCompile Include="GraphicScale.cpp" />
+    <ClCompile Include="GrassMesh.cpp" />
+    <ClCompile Include="GrassShader.cpp" />
+    <ClCompile Include="GUIrenderEngine.cpp" />
+    <ClCompile Include="GUIText.cpp" />
+    <ClCompile Include="LensFlareShader.cpp" />
+    <ClCompile Include="LightC.cpp" />
+    <ClCompile Include="LightShader.cpp" />
+    <ClCompile Include="Line.cpp" />
+    <ClCompile Include="LineMesh.cpp" />
+    <ClCompile Include="LineRendererC.cpp" />
+    <ClCompile Include="lua\lapi.c" />
+    <ClCompile Include="lua\lauxlib.c" />
+    <ClCompile Include="lua\lbaselib.c" />
+    <ClCompile Include="lua\lbitlib.c" />
+    <ClCompile Include="lua\lcode.c" />
+    <ClCompile Include="lua\lcorolib.c" />
+    <ClCompile Include="lua\lctype.c" />
+    <ClCompile Include="lua\ldblib.c" />
+    <ClCompile Include="lua\ldebug.c" />
+    <ClCompile Include="lua\ldo.c" />
+    <ClCompile Include="lua\ldump.c" />
+    <ClCompile Include="lua\lfunc.c" />
+    <ClCompile Include="lua\lgc.c" />
+    <ClCompile Include="lua\linit.c" />
+    <ClCompile Include="lua\liolib.c" />
+    <ClCompile Include="lua\llex.c" />
+    <ClCompile Include="lua\lmathlib.c" />
+    <ClCompile Include="lua\lmem.c" />
+    <ClCompile Include="lua\loadlib.c" />
+    <ClCompile Include="lua\lobject.c" />
+    <ClCompile Include="lua\lopcodes.c" />
+    <ClCompile Include="lua\loslib.c" />
+    <ClCompile Include="lua\lparser.c" />
+    <ClCompile Include="lua\lstate.c" />
+    <ClCompile Include="lua\lstring.c" />
+    <ClCompile Include="lua\lstrlib.c" />
+    <ClCompile Include="lua\ltable.c" />
+    <ClCompile Include="lua\ltablib.c" />
+    <ClCompile Include="lua\ltm.c" />
+    <ClCompile Include="lua\lundump.c" />
+    <ClCompile Include="lua\lutf8lib.c" />
+    <ClCompile Include="lua\lvm.c" />
+    <ClCompile Include="lua\lzio.c" />
+    <ClCompile Include="lua_backend.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="MatricesUBO.cpp" />
+    <ClCompile Include="Mesh.cpp" />
+    <ClCompile Include="MeshColliderC.cpp" />
+    <ClCompile Include="MeshRendererC.cpp" />
+    <ClCompile Include="MetaFile.cpp" />
+    <ClCompile Include="ModelLibrary.cpp" />
+    <ClCompile Include="MotionBlurShader.cpp" />
+    <ClCompile Include="NullShader.cpp" />
+    <ClCompile Include="pbuffer.cpp" />
+    <ClCompile Include="pingpongFBO.cpp" />
+    <ClCompile Include="PlayerManager.cpp" />
+    <ClCompile Include="PointLightC.cpp" />
+    <ClCompile Include="PostProcessPassShader.cpp" />
+    <ClCompile Include="RendererC.cpp" />
+    <ClCompile Include="Scene3D.cpp" />
+    <ClCompile Include="scenebase.cpp" />
+    <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="ScriptC.cpp" />
+    <ClCompile Include="ShaderHeaven.cpp" />
+    <ClCompile Include="ShaderProgram.cpp" />
+    <ClCompile Include="SimpleShader.cpp" />
+    <ClCompile Include="skyboxbuffer.cpp" />
+    <ClCompile Include="SkyboxShader.cpp" />
+    <ClCompile Include="SphereColliderC.cpp" />
+    <ClCompile Include="SSAOBlurShader.cpp" />
+    <ClCompile Include="ssaobuffer.cpp" />
+    <ClCompile Include="SSAOShader.cpp" />
+    <ClCompile Include="TextMesh.cpp" />
+    <ClCompile Include="TextMeshCreator.cpp" />
+    <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="TextureData.cpp" />
+    <ClCompile Include="TextureLibrary.cpp" />
+    <ClCompile Include="TransformationC.cpp" />
+    <ClCompile Include="TriggerC.cpp" />
+    <ClCompile Include="UBO.cpp" />
+    <ClCompile Include="Word.cpp" />
+    <ClCompile Include="World.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AABB.h" />
+    <ClInclude Include="AxisLineMesh.h" />
+    <ClInclude Include="BasicMesh.h" />
+    <ClInclude Include="BulletC.h" />
+    <ClInclude Include="CameraC.h" />
+    <ClInclude Include="Canvas.h" />
+    <ClInclude Include="Character.h" />
+    <ClInclude Include="Collectable.h" />
+    <ClInclude Include="ColliderC.h" />
+    <ClInclude Include="commonShader.h" />
+    <ClInclude Include="Component.h" />
+    <ClInclude Include="componentsH_dclr.h" />
+    <ClInclude Include="ComponentsPool.h" />
+    <ClInclude Include="com_decla.h" />
+    <ClInclude Include="DebugMesh.h" />
+    <ClInclude Include="debugShader.h" />
+    <ClInclude Include="depthMapFBO.h" />
+    <ClInclude Include="depthShader.h" />
+    <ClInclude Include="DinoAIC.h" />
+    <ClInclude Include="DirLightC.h" />
+    <ClInclude Include="EllipsoidColliderC.h" />
+    <ClInclude Include="EntitiesPool.h" />
+    <ClInclude Include="Entity.h" />
+    <ClInclude Include="finalFBO.h" />
+    <ClInclude Include="FinalPassShader.h" />
+    <ClInclude Include="FontShader.h" />
+    <ClInclude Include="FontsLibrary.h" />
+    <ClInclude Include="FontType.h" />
+    <ClInclude Include="FXAAShader.h" />
+    <ClInclude Include="GameApplication.h" />
+    <ClInclude Include="GausianBlurShader.h" />
+    <ClInclude Include="gbuffer.h" />
+    <ClInclude Include="GeometryPassShader.h" />
+    <ClInclude Include="GLFW_Window.h" />
+    <ClInclude Include="GLH.h" />
+    <ClInclude Include="gl_backend.h" />
+    <ClInclude Include="GraphicEngine.h" />
+    <ClInclude Include="GraphicScale.h" />
+    <ClInclude Include="GrassMesh.h" />
+    <ClInclude Include="GrassShader.h" />
+    <ClInclude Include="GUIrenderEngine.h" />
+    <ClInclude Include="GUIText.h" />
+    <ClInclude Include="LensFlareShader.h" />
+    <ClInclude Include="LightC.h" />
+    <ClInclude Include="LightShader.h" />
+    <ClInclude Include="Line.h" />
+    <ClInclude Include="LineMesh.h" />
+    <ClInclude Include="LineRendererC.h" />
+    <ClInclude Include="LUACallbacks.h" />
+    <ClInclude Include="lua\lapi.h" />
+    <ClInclude Include="lua\lauxlib.h" />
+    <ClInclude Include="lua\lcode.h" />
+    <ClInclude Include="lua\lctype.h" />
+    <ClInclude Include="lua\ldebug.h" />
+    <ClInclude Include="lua\ldo.h" />
+    <ClInclude Include="lua\lfunc.h" />
+    <ClInclude Include="lua\lgc.h" />
+    <ClInclude Include="lua\llex.h" />
+    <ClInclude Include="lua\llimits.h" />
+    <ClInclude Include="lua\lmem.h" />
+    <ClInclude Include="lua\lobject.h" />
+    <ClInclude Include="lua\lopcodes.h" />
+    <ClInclude Include="lua\lparser.h" />
+    <ClInclude Include="lua\lprefix.h" />
+    <ClInclude Include="lua\lstate.h" />
+    <ClInclude Include="lua\lstring.h" />
+    <ClInclude Include="lua\ltable.h" />
+    <ClInclude Include="lua\ltm.h" />
+    <ClInclude Include="lua\lua.h" />
+    <ClInclude Include="lua\lua.hpp" />
+    <ClInclude Include="lua\luaconf.h" />
+    <ClInclude Include="lua\lualib.h" />
+    <ClInclude Include="lua\lundump.h" />
+    <ClInclude Include="lua\lvm.h" />
+    <ClInclude Include="lua\lzio.h" />
+    <ClInclude Include="lua_backend.h" />
+    <ClInclude Include="MatricesUBO.h" />
+    <ClInclude Include="Mesh.h" />
+    <ClInclude Include="MeshColliderC.h" />
+    <ClInclude Include="MeshRendererC.h" />
+    <ClInclude Include="MetaFile.h" />
+    <ClInclude Include="ModelLibrary.h" />
+    <ClInclude Include="MotionBlurShader.h" />
+    <ClInclude Include="NullShader.h" />
+    <ClInclude Include="pbuffer.h" />
+    <ClInclude Include="pingpongFBO.h" />
+    <ClInclude Include="PlayerManager.h" />
+    <ClInclude Include="PointLightC.h" />
+    <ClInclude Include="PostProcessPassShader.h" />
+    <ClInclude Include="RendererC.h" />
+    <ClInclude Include="Scene3D.h" />
+    <ClInclude Include="scenebase.h" />
+    <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="ScriptC.h" />
+    <ClInclude Include="ShaderFiles.h" />
+    <ClInclude Include="ShaderHeaven.h" />
+    <ClInclude Include="ShaderProgram.h" />
+    <ClInclude Include="SimpleShader.h" />
+    <ClInclude Include="skyboxbuffer.h" />
+    <ClInclude Include="SkyboxShader.h" />
+    <ClInclude Include="SphereColliderC.h" />
+    <ClInclude Include="SSAOBlurShader.h" />
+    <ClInclude Include="ssaobuffer.h" />
+    <ClInclude Include="SSAOShader.h" />
+    <ClInclude Include="TextMesh.h" />
+    <ClInclude Include="TextMeshCreator.h" />
+    <ClInclude Include="Texture.h" />
+    <ClInclude Include="TextureData.h" />
+    <ClInclude Include="TextureLibrary.h" />
+    <ClInclude Include="TransformationC.h" />
+    <ClInclude Include="TriggerC.h" />
+    <ClInclude Include="UBO.h" />
+    <ClInclude Include="Word.h" />
+    <ClInclude Include="World.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\shader\basic.vertexshader" />
+    <None Include="Content\shader\common.vertexshader" />
+    <None Include="Content\shader\debug.fragmentshader" />
+    <None Include="Content\shader\debug.vertexshader" />
+    <None Include="Content\shader\depthShader.fragmentshader" />
+    <None Include="Content\shader\depthShader.vertexshader" />
+    <None Include="Content\shader\finalPassShader.fragmentshader" />
+    <None Include="Content\shader\font.fragmentshader" />
+    <None Include="Content\shader\font.vertexshader" />
+    <None Include="Content\shader\FXAA.fragmentshader" />
+    <None Include="Content\shader\Gausian1DShader.fragmentshader" />
+    <None Include="Content\shader\geometrypass.fragmentshader" />
+    <None Include="Content\shader\geometrypass.vertexshader" />
+    <None Include="Content\shader\grassShader.fragmentshader" />
+    <None Include="Content\shader\grassShader.geometryshader" />
+    <None Include="Content\shader\grassShader.vertexshader" />
+    <None Include="Content\shader\LensFlareShader.fragmentshader" />
+    <None Include="Content\shader\lightpass.fragmentshader" />
+    <None Include="Content\shader\lightpass.vertexshader" />
+    <None Include="Content\shader\motionBlur.fragmentshader" />
+    <None Include="Content\shader\nullshader.fragmentshader" />
+    <None Include="Content\shader\nullshader.vertexshader" />
+    <None Include="Content\shader\PostProcessPass.fragmentshader" />
+    <None Include="Content\shader\simpleShader.fragmentshader" />
+    <None Include="Content\shader\skyboxShader.fragmentshader" />
+    <None Include="Content\shader\skyboxShader.vertexshader" />
+    <None Include="Content\shader\ssaoBlur.fragmentshader" />
+    <None Include="Content\shader\ssaoShader.fragmentshader" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>

@@ -1,0 +1,45 @@
+# This file uses centimeters as units for non-parametric coordinates.
+
+mtllib dinoTailHornS.mtl
+g dinoTailHornS:default2
+v -0.000187 -0.108838 -0.208710
+v -0.175531 -0.076900 -0.069312
+v -0.000187 -0.044961 0.070085
+v 0.175158 -0.076900 -0.069312
+v -0.000187 0.167465 -0.113298
+vt 0.500000 0.000000
+vt 0.750000 0.250000
+vt 0.250000 0.250000
+vt 0.500000 0.500000
+vt 0.250000 0.500000
+vt 0.375000 0.500000
+vt 0.500000 1.000000
+vt 0.500000 0.500000
+vt 0.625000 0.500000
+vt 0.750000 0.500000
+vn 0.000000 -0.974742 0.223333
+vn 0.000000 -0.974742 0.223333
+vn 0.000000 -0.974742 0.223333
+vn 0.000000 -0.974742 0.223333
+vn 0.000000 -0.974742 0.223333
+vn 0.000000 -0.974742 0.223333
+vn -0.569038 0.268403 -0.777274
+vn -0.569039 0.268402 -0.777274
+vn -0.569039 0.268402 -0.777274
+vn -0.584734 0.530109 0.614060
+vn -0.584734 0.530109 0.614060
+vn -0.584734 0.530109 0.614060
+vn 0.584734 0.530109 0.614061
+vn 0.584734 0.530109 0.614061
+vn 0.584734 0.530109 0.614061
+vn 0.569039 0.268402 -0.777274
+vn 0.569039 0.268402 -0.777274
+vn 0.569039 0.268402 -0.777274
+s off
+g dinoTailHornS:initialShadingGroup dinoTailHornS:initialShadingGroup9 dinoTailHornS:initialShadingGroup10 dinoTailHornS:initialShadingGroup11 dinoTailHornS:initialShadingGroup12 dinoTailHornS:initialShadingGroup13 dinoTailHornS:initialShadingGroup14 dinoTailHornS:initialShadingGroup15 dinoTailHornS:initialShadingGroup16 dinoTailHornS:pPyramid3 dinoTailHornS:polySurface7 dinoTailHornS:polySurface11 dinoTailHornS:polySurface15 dinoTailHornS:polySurface18 dinoTailHornS:polySurface25 dinoTailHornS:polySurface26 dinoTailHornS:polySurface27 dinoTailHornS:polySurface28 dinoTailHornS:polySurface30 dinoTailHornS:polySurface31 dinoTailHornS:polySurface34 dinoTailHornS:polySurface91 dinoTailHornS:polySurface99 dinoTailHornS:polySurface100 initialShadingGroup dinoTailHornS:polySurface1
+f 1/1/1 4/2/2 2/3/3
+f 2/3/4 4/2/5 3/4/6
+f 1/5/7 2/6/8 5/7/9
+f 2/6/10 3/8/11 5/7/12
+f 3/8/13 4/9/14 5/7/15
+f 4/9/16 1/10/17 5/7/18

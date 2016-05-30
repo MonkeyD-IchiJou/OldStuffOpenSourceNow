@@ -1,0 +1,289 @@
+#version 420 core
+
+layout(points) in;  
+layout(triangle_strip, max_vertices=30) out; 
+
+smooth in vec3 Normal[];
+in vec3 randomNum[];
+
+out GS_OUT
+{
+    smooth vec3 Normal;
+	smooth vec3 FragPos;
+	smooth vec3 NormalView;
+	smooth vec3 FragPosView;
+	smooth vec3 color;
+}gs_out;
+
+layout (std140, binding = 0) uniform Matrices
+{
+    mat4 projection;
+    mat4 view;
+};
+
+uniform mat4 Model;
+uniform float m_Timer = 1.0;
+uniform vec3 windDirection;
+
+void generatePoint(vec4 PosL, vec3 color);
+float DegreeToRadian(float value);
+mat4 rotationMatrixY(float angle);
+mat4 CreateRotationMatrix(vec3 dir);
+mat4 CreateTranslationMatrix(vec3 start, vec3 end);
+float RadianToDegree(float value);
+
+void main()
+{
+	float m_MaxLOD = 5.0;
+	float m_MaxViewDistance = 1000.0;
+	float m_GrassHeight = 1.5;
+	float m_GrassWidth = 0.05;
+	float m_MaxWindDistance = 500.0;
+	mat4 m_MatrixViewInverse = inverse(view);
+
+
+	vec3 NormalL = Normal[0];
+
+	mat3 normalMatrix = transpose(inverse(mat3( Model)));
+	mat3 normalMatrixView = transpose(inverse(mat3(view * Model)));
+
+
+	//First thing we do is check if grass actually grows here.
+	if (dot(NormalL, vec3(0, 1, 0)) > 0)  
+	{
+		
+		vec3 startPoint, endPoint, startTopPoint, endTopPoint, normal;
+
+		vec3 noiseSample = randomNum[0];
+
+		//Set some variables
+		float maxVariation = (m_GrassHeight/5.0);
+		float grassHeight = m_GrassHeight - maxVariation + (noiseSample.r * (maxVariation*2)); //random offset
+		
+
+		//Get the start & end position of the root vertices
+		
+		startPoint = gl_in[0].gl_Position.xyz;
+		startPoint.x = gl_in[0].gl_Position.x - m_GrassWidth/4.0;
+		endPoint = startPoint;
+		endPoint.x += m_GrassWidth/2.0; 
+
+
+
+
+		
+		//Transform the root vertices to follow the winddirection (all the other vertices will follow)
+		mat4 matTranslateBack = CreateTranslationMatrix(vec3(0, 0, 0), vec3(gl_in[0].gl_Position));
+		mat4 matTranslate = CreateTranslationMatrix(vec3(gl_in[0].gl_Position), vec3(0, 0, 0));
+
+		//billboarding
+		vec3 viewDirection = normalize(gl_in[0].gl_Position.xyz - m_MatrixViewInverse[3].xyz);
+
+		mat4 matRotate = CreateRotationMatrix(viewDirection);
+		mat4 matTransform = matTranslate * matRotate * matTranslateBack;
+
+		startPoint = (matTransform * vec4(startPoint, 1.0)).xyz;
+		endPoint = (matTransform * vec4(endPoint, 1.0)).xyz; 
+
+
+
+
+
+
+		
+		//Calculate current LOD
+		float lod = m_MaxLOD;
+		float distance = length(gl_in[0].gl_Position.xyz - m_MatrixViewInverse[3].xyz);
+		float lodScale = 1.0 - (distance/m_MaxViewDistance);
+
+		//if there is no wind, then the player doesn't notice the difference between the lod's so we remove all of them
+		if (windDirection.x <= 0.1 && windDirection.y <= 0.1) lodScale = 0.0;
+
+		if (lodScale < 0.0) lodScale = 0.0;
+
+		lod = int(m_MaxLOD * lodScale);
+		if (lod < 1) lod = 1; 
+
+
+
+
+
+
+		
+		//Every level of detail adds an extra quad to the blade
+		for (int i = 0; i < lod; ++i)
+		{
+			//Calculate top position (follow terrain)
+			float lod_grassheight = grassHeight/lod;
+
+			// the above point
+			startTopPoint = startPoint + (vec3(lod_grassheight, lod_grassheight, lod_grassheight) * Normal[0]);
+			endTopPoint = endPoint + (vec3(lod_grassheight, lod_grassheight, lod_grassheight) * Normal[0]);
+
+
+			//Wind offset (add dotproduct to check if we are still under a condition)
+			//float direction = gl_in[0].gl_Position.xz - m_WindPosition.xz;
+
+
+			float windCoeff = ((i + 1)/lod) * (m_MaxLOD / lod); //Calculates windstrenght depending on how close the quad is to the ground
+			windCoeff = windCoeff * (1.0 - distance/m_MaxWindDistance) * noiseSample.r; //add a bit of randomness
+
+			if (windCoeff < 0.0) windCoeff = 0.0;
+
+			startTopPoint.xz += windDirection.xz * windCoeff;
+			endTopPoint.xz += windDirection.xz * windCoeff;
+
+
+			vec2 randomOffset = vec2(noiseSample.r, noiseSample.g) * (0.005 * sin(m_Timer));
+			startTopPoint.xz += randomOffset;
+			endTopPoint.xz += randomOffset;
+
+			randomOffset = vec2(noiseSample.b, noiseSample.r) * (0.005 * sin(0.2 * m_Timer));
+			startTopPoint.xz += randomOffset;
+			endTopPoint.xz += randomOffset;
+
+			//Calculate the difference in edge lenght and adjust the Y accordingly & move the vectices back over the edge vector
+			//we could just go with a simple formula, but it still generates plane stretching.
+			//like this (use in paper): startTopPoint.y -= length(windDirection) * windCoeff * 0.5;
+
+			vec3 edgeDirection = startTopPoint - startPoint;
+			float edgeLength = length(edgeDirection);
+			float deltaY = edgeLength - (grassHeight/lod);
+			edgeDirection = normalize(edgeDirection); //normalize here as we use it to calculate the lenght above
+
+			startTopPoint -= edgeDirection * deltaY;
+			endTopPoint -= edgeDirection * deltaY;
+
+			//Calculate normal (always point in the direction of the vertex)
+			normal = Normal[0];
+
+
+
+			vec3 V0 = startPoint - startTopPoint;
+			vec3 V1 = endPoint - startTopPoint;
+  
+			NormalL = cross(V1, V0);
+			NormalL = normalize(NormalL);
+  
+			// normal of the point, view space and world space
+			gs_out.Normal = normalMatrix * NormalL.xyz;
+			gs_out.NormalView = normalMatrixView * NormalL.xyz;
+
+
+			generatePoint(vec4(startPoint, 1.0), vec3(0, 0.5, 0));
+			generatePoint(vec4(startTopPoint, 1.0), vec3(0,  0.5, 0));
+			generatePoint(vec4(endPoint,1.0), vec3(0,  0.5, 0));
+			generatePoint(vec4(endTopPoint, 1.0), vec3(0,  0.5, 0));
+
+			startPoint = startTopPoint;
+			endPoint = endTopPoint;
+		} 
+
+		EndPrimitive();
+	}
+}
+
+
+void generatePoint(vec4 PosL, vec3 color)
+{
+	// view position for fragment pos in view space
+	vec4 viewPos = view * Model *PosL;
+	gs_out.FragPosView = viewPos.xyz;
+
+	// world position for fragment pos in world space
+	vec4 worldPos =  Model *PosL;
+	gs_out.FragPos = worldPos.xyz;
+
+	// output the first point
+	gl_Position = projection * view * worldPos;
+
+	// color of the point
+	gs_out.color = color;
+
+	EmitVertex();
+}
+
+
+
+float DegreeToRadian(float value)
+{
+	return value * 3.1415926535897932 / 180.0;
+}
+
+float RadianToDegree(float value)
+{
+	return value * 180.0 / 3.1415926535897932;
+}
+
+
+mat4 rotationMatrixY(float angle)
+{
+    return mat4( 
+	cos( angle ), 0.0, sin( angle ), 0.0,
+	0.0, 1.0, 0.0, 0.0,
+	-sin( angle ), 0.0, cos( angle ), 0.0,
+	0.0, 0.0, 0.0, 1.0 
+	);
+}
+
+
+
+mat4 CreateRotationMatrix(vec3 dir)
+{
+	float angle = atan(dir.x, dir.z);
+	return rotationMatrixY(-angle);
+}
+
+
+
+mat4 CreateTranslationMatrix(vec3 start, vec3 end)
+{
+	vec3 translation = start - end;
+	return mat4( 
+	1.0, 0.0, 0.0, 0.0,
+	0.0, 1.0, 0.0, 0.0,
+	0.0, 0.0, 1.0, 0.0,
+	translation.x, translation.y, translation.z, 1.0 
+	);
+}
+
+
+
+
+
+
+
+
+	/*
+		// firstly .. settle all the normal
+		// from here -------------------------------------------------------------------------------------------------
+		mat3 normalMatrix = transpose(inverse(mat3( Model)));
+		mat3 normalMatrixView = transpose(inverse(mat3(view * Model)));
+
+		// normal of the point, view space and world space
+		gs_out.Normal = normalMatrix * NormalL.xyz;  // it is to make sure that the normal is still correct when non-uniform scaling
+		gs_out.NormalView = normalMatrixView * NormalL.xyz;
+		// till here ------------------------------------------------------------------------------------------------
+
+
+		*/
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
